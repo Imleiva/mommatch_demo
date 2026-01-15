@@ -1,0 +1,538 @@
+.trueque-messages-container {
+  width: 100%;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 20px;
+  padding-top: 6rem; /* Espacio para el header fijo */
+  font-family: "Poppins", sans-serif;
+}
+
+.trueque-messages-header {
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  margin-bottom: 30px;
+  position: relative;
+  width: 100%;
+  gap: 20px; /* Añadir espacio entre el botón y el título */
+}
+
+.trueque-messages-title {
+  color: var(--color-dark);
+  margin-bottom: 30px;
+  margin-left: 250px; /* Espacio para el botón */
+  font-size: 1.6rem;
+  font-weight: bold;
+  flex: 1;
+}
+
+.back-to-trueques-button {
+  display: flex;
+  align-items: center;
+  background-color: var(--color-primary);
+  color: white;
+  text-decoration: none;
+  padding: 8px 12px;
+  border-radius: 25px;
+  font-size: 0.9rem;
+  transition: all 0.3s ease;
+  box-shadow: var(--box-shadow-sm);
+  z-index: 10; /* Asegurar que esté por encima de otros elementos */
+  cursor: pointer; /* Asegurar que muestre el cursor pointer */
+}
+
+.back-to-trueques-button:hover {
+  background-color: var(--color-primary-dark);
+  color: white;
+  transform: translateY(-1px);
+  box-shadow: var(--box-shadow);
+}
+
+.back-icon {
+  font-size: 0.8rem;
+  margin-right: 8px;
+  font-weight: bold;
+  transform: translateY(-1px);
+}
+
+.trueque-chat-container {
+  display: flex;
+  height: calc(100vh - 280px);
+  border-radius: var(--border-radius-md);
+  overflow: hidden;
+  box-shadow: var(--box-shadow);
+  background-color: #fff;
+}
+
+/* Barra lateral de conversaciones de trueques */
+.trueque-chat-sidebar {
+  width: 300px;
+  border-right: 1px solid var(--color-border);
+  background-color: #f9f9f9;
+}
+
+.trueque-chat-sidebar h2 {
+  padding: 30px;
+  font-size: 0.9rem;
+  border-radius: 10px 0 0;
+  border-bottom: 6.5px solid #ffb050;
+  background-color: #ffa02c;
+  color: white;
+  text-align: center;
+  position: absolute;
+}
+
+.trueque-conversation-list {
+  list-style: none;
+  padding: 0;
+  margin: 90px 0 0 0;
+  overflow-y: auto;
+  height: calc(100vh - 370px);
+}
+
+.trueque-conversation-item {
+  padding: 10px;
+  border-bottom: 1px solid var(--color-border);
+  display: flex;
+  align-items: center;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.trueque-conversation-item:hover {
+  background-color: rgba(142, 180, 163, 0.223);
+}
+
+.trueque-conversation-item.trueque-active {
+  background-color: rgba(255, 110, 97, 0.115);
+  border-left: 5px solid var(--color-primary-dark);
+}
+
+.trueque-conversation-item.trueque-unread {
+  background-color: rgba(255, 110, 97, 0.212);
+}
+
+.trueque-conversation-avatar-container {
+  position: relative;
+  margin-right: 20px;
+}
+
+.trueque-chat-list-avatar {
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  object-fit: cover;
+  box-shadow: var(--box-shadow-sm);
+  border: 2px solid white;
+}
+
+.trueque-badge {
+  position: absolute;
+  bottom: -5px;
+  right: -5px;
+  width: 25px;
+  height: 25px;
+  border-radius: 50%;
+  background-color: white;
+  border: 2px solid #f9f9f9;
+  overflow: hidden;
+  box-shadow: var(--box-shadow-sm);
+}
+
+.trueque-thumbnail {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.trueque-conversation-info {
+  flex: 1;
+  overflow: hidden;
+}
+
+.trueque-conversation-name {
+  display: block;
+  color: var(--color-dark) !important;
+  font-weight: bold;
+  margin-bottom: 2px;
+  color: var(--color-text);
+  font-size: 0.85rem; /* Reducido de tamaño predeterminado a 0.85rem */
+  max-width: 180px; /* Limitar ancho máximo */
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis; /* Añadir elipsis para texto truncado */
+}
+
+.trueque-conversation-preview {
+  display: block;
+  font-size: 0.85rem;
+  color: var(--color-text-light);
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  max-width: 200px;
+}
+
+.trueque-unread-badge {
+  background-color: var(--color-primary);
+  color: white;
+  border-radius: 50%;
+  width: 22px;
+  height: 22px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 0.8rem;
+  font-weight: bold;
+  box-shadow: var(--box-shadow-sm);
+}
+
+/* Contenido del chat de trueques */
+.trueque-chat-content {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  flex-grow: 1;
+}
+
+.trueque-chat-header {
+  padding: 8px 12px;
+  border-bottom: 1px solid var(--color-border);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  background-color: white;
+}
+
+.trueque-chat-user-info {
+  display: flex;
+  font-size: 0.9rem;
+  color: var(--color-dark);
+  align-items: center;
+}
+
+.trueque-chat-header-avatar {
+  width: 68px;
+  height: 68px;
+  border-radius: 50%;
+  margin-right: 12px;
+  object-fit: cover;
+  border: 2px solid var(--color-primary);
+}
+
+.trueque-context {
+  display: flex;
+  align-items: center;
+  background-color: rgba(255, 111, 97, 0.05);
+  padding: 8px 15px;
+  border-radius: 20px;
+  border: 1px solid var(--color-primary);
+}
+
+.trueque-info {
+  margin-right: 12px;
+  font-size: 0.85rem; /* Reducido de 0.9rem a 0.85rem */
+  color: var(--color-dark);
+  max-width: 150px; /* Limitar ancho para evitar nombres largos */
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.trueque-city {
+  display: block;
+  font-size: 0.8rem;
+  color: var(--color-text-light);
+  margin-top: 3px;
+}
+
+.trueque-image {
+  width: 55px;
+  height: 55px;
+  border-radius: 8px;
+  object-fit: cover;
+  box-shadow: var(--box-shadow-sm);
+}
+
+/* Corrección para el contenedor de mensajes */
+.trueque-chat-messages {
+  flex-grow: 1;
+  display: flex;
+  flex-direction: column;
+  overflow-y: auto;
+  padding: 15px;
+  background-color: #f5f5f5;
+  height: 60vh;
+}
+
+.trueque-messages-list {
+  display: flex;
+  flex-direction: column;
+  flex-grow: 1;
+  overflow-y: auto;
+  justify-content: flex-start;
+  min-height: 100%;
+}
+
+.trueque-message {
+  margin-bottom: 10px;
+  display: flex;
+  animation: message-fade-in 0.3s ease;
+}
+
+@keyframes message-fade-in {
+  from {
+    opacity: 0;
+    transform: translateY(10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.trueque-my-message {
+  justify-content: flex-end;
+}
+
+.trueque-their-message {
+  justify-content: flex-start;
+}
+
+.trueque-message-bubble {
+  max-width: 30%;
+  padding: 4px 12px;
+  border-radius: 16px;
+  box-shadow: var(--box-shadow-sm);
+  word-wrap: break-word;
+  overflow-wrap: break-word;
+  word-break: break-word;
+  white-space: normal;
+  overflow-x: hidden;
+}
+
+.trueque-my-message .trueque-message-bubble {
+  background-color: var(--color-accent);
+  color: white;
+  border-bottom-right-radius: 6px;
+}
+
+.trueque-their-message .trueque-message-bubble {
+  background-color: white;
+  border-bottom-left-radius: 6px;
+  color: var(--color-dark);
+  border: 1px solid var(--color-border);
+}
+
+.trueque-message-bubble p {
+  margin: 0 0 4px 0;
+  line-height: 1.3;
+  font-size: 0.9rem;
+  font-weight: 500;
+  letter-spacing: 0.01em;
+  max-width: 100%;
+  overflow-wrap: break-word;
+  word-break: break-word;
+}
+
+.trueque-message-time {
+  font-size: 0.7rem;
+  opacity: 0.9;
+  display: block;
+  text-align: right;
+  font-weight: 500;
+}
+
+.trueque-message-input-container {
+  display: flex;
+  margin-left: 6px;
+  border-top: 1px solid var(--color-border);
+  background-color: white;
+}
+
+.trueque-message-input {
+  flex: 1;
+  padding: 7px 12px;
+  border: 1px solid var(--color-border);
+  border-radius: 20px;
+  outline: none;
+  font-size: 0.9rem;
+  font-family: "Poppins", sans-serif;
+  transition: border 0.3s, box-shadow 0.3s;
+}
+
+/* Estilo específico para el botón de enviar del chat de trueques */
+#trueque-chat-send-button.custom-trueque-send-btn {
+  font-family: poppins, sans-serif;
+  background-color: var(--color-primary);
+  color: white;
+  border: none;
+  border-radius: 18px;
+  cursor: pointer;
+  font-weight: bold;
+  transition: all 0.3s;
+  box-shadow: var(--box-shadow-sm);
+  min-width: 120px;
+  max-width: 120px;
+  margin: 0.6rem;
+  height: 40px;
+  font-size: 0.9rem;
+}
+
+#trueque-chat-send-button.custom-trueque-send-btn:hover {
+  background-color: var(--color-primary-dark) !important;
+  box-shadow: var(--box-shadow) !important;
+}
+
+#trueque-chat-send-button.custom-trueque-send-btn:disabled {
+  background-color: #cccccc !important;
+  cursor: not-allowed !important;
+  transform: none !important;
+  box-shadow: none !important;
+}
+
+/* Estados vacíos y carga */
+.trueque-empty-state {
+  padding: 40px;
+  text-align: center;
+  color: var(--color-text-light);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  height: 100%;
+  font-size: 1rem;
+}
+
+.trueque-empty-state h3 {
+  color: var(--color-primary);
+  margin-bottom: 15px;
+}
+
+.trueque-loading-indicator {
+  padding: 20px;
+  text-align: center;
+  color: var(--color-text-light);
+}
+
+.trueque-error-message {
+  padding: 15px;
+  background-color: rgba(231, 76, 60, 0.1);
+  color: var(--color-error);
+  margin: 10px;
+  border-radius: 15px;
+  text-align: center;
+  border: 1px solid var(--color-error);
+}
+
+.trueque-no-chat-selected {
+  flex: 1;
+  font-size: 1.5rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: #f9f9f9;
+}
+
+/* Indicador de actualización en segundo plano */
+.background-refresh-indicator {
+  font-size: 12px;
+  color: var(--color-success);
+  margin-left: 8px;
+  display: inline-block;
+  animation: pulse 1.5s infinite;
+  vertical-align: middle;
+}
+
+@keyframes pulse {
+  0% {
+    opacity: 0.3;
+  }
+  50% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0.3;
+  }
+}
+
+.trueque-message-failed .trueque-message-bubble {
+  opacity: 0.8;
+  border: 1px dashed #f44336;
+}
+
+.trueque-message-error {
+  display: block;
+  color: #f44336;
+  font-size: 0.8rem;
+  margin-top: 5px;
+}
+
+.trueque-message-error button {
+  background: none;
+  border: none;
+  color: #f44336;
+  text-decoration: underline;
+  cursor: pointer;
+  padding: 0;
+  margin-left: 5px;
+  font-size: 0.8rem;
+}
+
+.trueque-message-error button:hover {
+  color: #d32f2f;
+}
+
+/* Estilos para estados de mensajes */
+.trueque-message-sending .trueque-message-bubble {
+  opacity: 0.8;
+  background-color: rgba(255, 255, 255, 0.6);
+}
+
+.trueque-message-status {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-size: 0.8rem;
+  margin-top: 4px;
+}
+
+.sending-indicator {
+  color: #888;
+  font-style: italic;
+  font-size: 0.75rem;
+  margin-left: 5px;
+}
+
+.retry-button {
+  background: none;
+  border: none;
+  color: #f44336;
+  text-decoration: underline;
+  cursor: pointer;
+  padding: 0;
+  margin-left: 5px;
+  font-size: 0.75rem;
+}
+
+.retry-button:hover {
+  color: #d32f2f;
+  text-decoration: none;
+}
+
+/* Animación de pulso para mensajes enviándose */
+@keyframes pulse {
+  0% {
+    opacity: 0.6;
+  }
+  50% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0.6;
+  }
+}
+
+.trueque-message-sending .trueque-message-bubble {
+  animation: pulse 1.5s infinite;
+}

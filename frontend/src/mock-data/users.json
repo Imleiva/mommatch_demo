@@ -1,0 +1,22 @@
+[
+  {
+    "id": 1,
+    "name": "Ana",
+    "email": "ana@example.com",
+    "password": "$2y$10$u3Rjb1cp6u9juQOaU4zOoOyIc0LtmxlIQ0aU2yYBXiNlsfwnICtzi",
+    "last_active": "2025-06-10T01:53:09",
+    "created_at": "2025-04-07T16:07:42",
+    "updated_at": "2025-06-10T01:53:09",
+    "profile_completed": 1
+  },
+  {
+    "id": 2,
+    "name": "Beatriz",
+    "email": "beatriz@example.com",
+    "password": "$2y$10$u3Rjb1cp6u9juQOaU4zOoOyIc0LtmxlIQ0aU2yYBXiNlsfwnICtzi",
+    "last_active": null,
+    "created_at": "2025-04-07T16:07:42",
+    "updated_at": "2025-04-07T16:07:42",
+    "profile_completed": 1
+  }
+]

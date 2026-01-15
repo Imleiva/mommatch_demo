@@ -1,0 +1,24 @@
+[
+  {
+    "id": 47,
+    "chat_id": 26,
+    "sender_id": 53,
+    "receiver_id": 13,
+    "trueque_id": 0,
+    "message": "Hola, me interesa!",
+    "sent_at": "2025-04-17T20:16:54",
+    "is_read": 0,
+    "created_at": "2025-04-21T19:18:27"
+  },
+  {
+    "id": 48,
+    "chat_id": 26,
+    "sender_id": 53,
+    "receiver_id": 13,
+    "trueque_id": 0,
+    "message": "Qué bien! Sigue disponible!",
+    "sent_at": "2025-04-17T20:17:20",
+    "is_read": 0,
+    "created_at": "2025-04-21T19:18:27"
+  }
+]
