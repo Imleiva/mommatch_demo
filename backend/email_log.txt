@@ -1,0 +1,5 @@
+
+Simulación de envío de correo:
+Para: a@gmail.com
+Asunto: Respuesta a tu mensaje de ayuda
+Mensaje: Responder
