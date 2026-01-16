@@ -1,5 +1,6 @@
 {
   "dependencies": {
+    "react-dom": "^19.2.3",
     "sass": "^1.86.3"
   }
 }

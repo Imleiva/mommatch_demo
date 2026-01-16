@@ -3,6 +3,7 @@ import { Link } from "react-router-dom";
 import "./Blog.css";
 import placeholderImage from "../assets/images/placeholder.png";
 import LoadingSpinner from "./LoadingSpinner";
+import mockArticles from "../data/articles.json";
 
 // Componente que muestra la lista de artículos del blog
 // Sistema de filtrado por categorías que permite a las usuarias
@@ -22,69 +23,50 @@ function Blog() {
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState(null);
 
-  // Obtener artículos desde el backend
+  // Cargar artículos desde datos mock
   useEffect(() => {
-    const fetchData = async () => {
-      try {
-        setLoading(true);
-        const response = await fetch(
-          "http://localhost/mommatch/backend/blog_api.php?action=get_articles",
-          {
-            headers: {
-              Accept: "application/json",
-            },
-            credentials: "include",
-          }
-        );
+    try {
+      setLoading(true);
 
-        const data = await response.json();
+      const getImageUrl = (imagePath) => {
+        if (!imagePath) return placeholderImage;
 
-        if (!response.ok || data.status === "error") {
-          throw new Error(data.message || "Error al cargar artículos");
+        // Si ya es una URL completa
+        if (imagePath.startsWith("http")) return imagePath;
+
+        // Si es solo el nombre del archivo (sin carpetas)
+        if (!imagePath.includes("/")) {
+          return `/mommatch_demo/images/blog/${imagePath}`;
         }
 
-        const getImageUrl = (imagePath) => {
-          if (!imagePath) return placeholderImage;
+        // Si es una ruta relativa que empieza con /images
+        if (imagePath.startsWith("/images")) {
+          return `/mommatch_demo${imagePath}`;
+        }
 
-          // Si ya es una URL completa
-          if (imagePath.startsWith("http")) return imagePath;
+        // Si es una ruta que empieza con images/
+        if (imagePath.startsWith("images/")) {
+          return `/mommatch_demo/${imagePath}`;
+        }
 
-          // Si es solo el nombre del archivo (sin carpetas)
-          if (!imagePath.includes("/")) {
-            return `http://localhost/mommatch/frontend/public/images/blog/${imagePath}`;
-          }
+        // Caso por defecto
+        return `/mommatch_demo/images/blog/${imagePath}`;
+      };
 
-          // Si es una ruta relativa que empieza con /images
-          if (imagePath.startsWith("/images")) {
-            return `http://localhost/mommatch/frontend/public${imagePath}`;
-          }
-
-          // Si es una ruta que empieza con images/
-          if (imagePath.startsWith("images/")) {
-            return `http://localhost/mommatch/frontend/public/${imagePath}`;
-          }
-
-          // Caso por defecto
-          return `http://localhost/mommatch/frontend/public/images/blog/${imagePath}`;
-        };
-
-        setArticles(
-          data.data.map((article) => ({
-            ...article,
-            image: getImageUrl(article.image),
-            date: article.date || new Date().toISOString().split("T")[0],
-          }))
-        );
-      } catch (err) {
-        console.error("Error:", err);
-        setError(err.message);
-        setArticles([]);
-      } finally {
-        setLoading(false);
-      }
-    };
-
-    fetchData();
+      setArticles(
+        mockArticles.map((article) => ({
+          ...article,
+          image: getImageUrl(article.image),
+          date: article.date || new Date().toISOString().split("T")[0],
+        }))
+      );
+    } catch (err) {
+      console.error("Error:", err);
+      setError(err.message);
+      setArticles([]);
+    } finally {
+      setLoading(false);
+    }
   }, []);
 
   // Filtrar artículos por categoría
