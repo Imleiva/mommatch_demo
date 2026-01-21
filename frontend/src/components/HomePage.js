@@ -1,6 +1,5 @@
 import React, { useState } from "react";
 import "./HomePage.css";
-import portada from "../assets/images/Portada1.jpg";
 import { useNavigate } from "react-router-dom";
 
 // La página de inicio es la primera impresión que reciben las usuarias,
@@ -24,7 +23,7 @@ function HomePage() {
       {/* Sección izquierda - Imagen */}
       <div className="mommatch-homepage__left-section">
         <img
-          src={portada}
+          src="/mommatch_demo/Portada1.jpg"
           alt="Mamás con bebés"
           className={`mommatch-homepage__main-image ${
             imageLoaded ? "loaded" : ""
