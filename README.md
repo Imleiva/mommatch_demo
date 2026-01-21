@@ -1,10 +1,14 @@
-# MomMatch Demo
+# MomMatch Demo 🌸
 
-A community platform connecting mothers to share experiences, resources, and support networks.
+**Versión DEMO de MomMatch - Totalmente funcional sin backend**
 
-## Overview
+Una plataforma comunitaria que conecta madres para compartir experiencias, recursos y redes de apoyo.
 
-MomMatch is a web application designed to help mothers connect with each other through matches, exchanges, events, and community forums. This is the demo version showcasing the complete functionality of the application.
+Esta es una versión de demostración configurada EXPRESAMENTE para funcionar con datos mock sin necesidad del backend, base de datos ni servidor. Perfecta para demos, presentaciones y exploración de funcionalidades.
+
+## 🎯 Overview
+
+MomMatch es una aplicación web diseñada para ayudar a las madres a conectarse entre sí a través de matches, intercambios, eventos y foros comunitarios. Esta es la versión DEMO que muestra todas las funcionalidades de la aplicación.
 
 ## Features
 
