@@ -1,4 +1,6 @@
-export const BACKEND_URL = "http://localhost/mommatch/backend";
+import { config } from "../../config";
+
+export const BACKEND_URL = config.useMocks ? null : "http://localhost/mommatch/backend";
 
 // Problema con URLs de las fotos
 // Tuve que gestionar varios formatos diferentes porque las fotos venían
@@ -7,6 +9,32 @@ export const BACKEND_URL = "http://localhost/mommatch/backend";
 // Si no hay foto, uso una imagen por defecto.
 
 export const formatPhotoUrl = (photoPath, BACKEND_URL) => {
+  // Modo demo
+  if (config.useMocks) {
+    if (!photoPath || photoPath.trim() === "") {
+      return `${process.env.PUBLIC_URL}/uploads/profiles/default_profile.jpg`;
+    }
+
+    // Si ya es una URL completa, devolverla tal como está
+    if (photoPath.startsWith("http://") || photoPath.startsWith("https://")) {
+      return photoPath;
+    }
+
+    // Si comienza con /public/, remover el /public/ y usar PUBLIC_URL
+    if (photoPath.startsWith("/public/uploads/profiles/")) {
+      return `${process.env.PUBLIC_URL}${photoPath.substring(7)}`;
+    }
+
+    // Si comienza con public/, remover el public/ y usar PUBLIC_URL
+    if (photoPath.startsWith("public/uploads/profiles/")) {
+      return `${process.env.PUBLIC_URL}/${photoPath.substring(7)}`;
+    }
+
+    // Caso por defecto para nombres de archivo simples
+    return `${process.env.PUBLIC_URL}/uploads/profiles/${photoPath}`;
+  }
+
+  // Modo backend
   if (!photoPath || photoPath.trim() === "") {
     return `${BACKEND_URL}/public/uploads/profiles/default_profile.jpg`;
   }
