@@ -3,7 +3,8 @@ import "./MobileWarning.css";
 
 const MobileWarning = () => {
   const [isMobile, setIsMobile] = useState(false);
-  const [isVisible, setIsVisible] = useState(true);
+  const [isMinimized, setIsMinimized] = useState(false);
+  const [isDismissed, setIsDismissed] = useState(false);
 
   useEffect(() => {
     const checkIfMobile = () => {
@@ -17,24 +18,37 @@ const MobileWarning = () => {
     return () => window.removeEventListener("resize", checkIfMobile);
   }, []);
 
-  if (!isMobile || !isVisible) return null;
+  if (!isMobile || isDismissed) return null;
 
   return (
-    <div className="mobile-warning-banner">
-      <div className="mobile-warning-content">
-        <span className="mobile-warning-icon">💻</span>
-        <div className="mobile-warning-text">
-          <strong>Versión Desktop Recomendada</strong>
-          <p>Esta aplicación está optimizada para escritorio. Estamos trabajando en la versión móvil.</p>
+    <div className={`mobile-warning-banner ${isMinimized ? 'minimized' : ''}`}>
+      {!isMinimized ? (
+        <div className="mobile-warning-content">
+          <span className="mobile-warning-icon">💻</span>
+          <div className="mobile-warning-text">
+            <strong>Versión Desktop Recomendada</strong>
+            <p>App optimizada para escritorio</p>
+          </div>
+          <button 
+            className="mobile-warning-minimize"
+            onClick={() => setIsMinimized(true)}
+            aria-label="Minimizar"
+          >
+            ▼
+          </button>
+          <button 
+            className="mobile-warning-close"
+            onClick={() => setIsDismissed(true)}
+            aria-label="Cerrar"
+          >
+            ✕
+          </button>
         </div>
-        <button 
-          className="mobile-warning-close"
-          onClick={() => setIsVisible(false)}
-          aria-label="Cerrar aviso"
-        >
-          ✕
-        </button>
-      </div>
+      ) : (
+        <div className="mobile-warning-minimized" onClick={() => setIsMinimized(false)}>
+          💻 Ver en Desktop • Toca para expandir
+        </div>
+      )}
     </div>
   );
 };
