@@ -1,0 +1,39 @@
+[
+  {
+    "id": 39,
+    "title": "¿Cómo educas sin gritar? Técnicas de disciplina positiva.",
+    "description": "Compartamos estrategias para poner límites sin perder la paciencia. ¿Qué métodos te han funcionado mejor?",
+    "created_at": "2025-06-01 16:49:42"
+  },
+  {
+    "id": 40,
+    "title": "¿Guardería o quedarse en casa? Opiniones y experiencias.",
+    "description": "¿Cómo tomaste esta decisión? ¿Te arrepientes o lo volverías a hacer igual?",
+    "created_at": "2025-06-01 16:50:01"
+  },
+  {
+    "id": 41,
+    "title": "Libros y recursos favoritos sobre crianza.",
+    "description": "Recomendemos lecturas, cuentas de redes o podcasts que nos han ayudado a criar mejor.",
+    "created_at": "2025-06-01 16:50:23"
+  },
+  {
+    "id": 42,
+    "title": "Cómo cuidas tu salud mental como madre.",
+    "description": "La maternidad es hermosa, pero también agotadora. ¿Qué haces para cuidar de ti misma?",
+    "created_at": "2025-06-01 16:50:52"
+  },
+  {
+    "id": 43,
+    "title": "Crianza de un hijo con autismo: ¿cómo lo vives tú?",
+    "description": "Un espacio para madres que viven esta experiencia única. ¿Qué retos y aprendizajes has tenido?",
+    "created_at": "2025-06-01 16:51:30"
+  },
+  {
+    "id": 44,
+    "title": "Hoy fue un mal día... ¿alguien más necesita desahogarse?",
+    "description": "Este hilo es para soltar lo que llevas dentro, sin juicios.",
+    "created_at": "2025-06-01 16:51:53",
+    "updated_at": "2025-06-10 09:29:11"
+  }
+]

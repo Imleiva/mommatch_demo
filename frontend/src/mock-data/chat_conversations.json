@@ -1,0 +1,46 @@
+[
+  {
+    "id": 26,
+    "user1_id": 53,
+    "user2_id": 13,
+    "trueque_id": 141,
+    "created_at": "2025-04-17T20:16:54",
+    "updated_at": "2025-04-17T20:17:20",
+    "last_message": "Qué bien! Sigue disponible!",
+    "unread_count_user1": 0,
+    "unread_count_user2": 1
+  },
+  {
+    "id": 44,
+    "user1_id": 76,
+    "user2_id": 39,
+    "trueque_id": 151,
+    "created_at": "2025-06-10T11:09:03",
+    "updated_at": "2025-06-10T11:09:03",
+    "last_message": "Hola! Estoy interesada en el coche",
+    "unread_count_user1": 0,
+    "unread_count_user2": 2
+  },
+  {
+    "id": 47,
+    "user1_id": 28,
+    "user2_id": 12,
+    "trueque_id": 140,
+    "created_at": "2025-06-11T17:43:03",
+    "updated_at": "2025-06-14T17:37:25",
+    "last_message": "Me interesa",
+    "unread_count_user1": 0,
+    "unread_count_user2": 5
+  },
+  {
+    "id": 48,
+    "user1_id": 28,
+    "user2_id": 13,
+    "trueque_id": 141,
+    "created_at": "2025-06-14T15:17:39",
+    "updated_at": "2025-06-14T15:17:39",
+    "last_message": "Me interesa",
+    "unread_count_user1": 0,
+    "unread_count_user2": 2
+  }
+]

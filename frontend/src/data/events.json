@@ -1,0 +1,68 @@
+[
+  {
+    "id": 2,
+    "title": "Merienda en el parque",
+    "description": "Un evento para disfrutar de una tarde en el parque con otras familias.",
+    "location": "Parque del Retiro, zona infantil",
+    "city": "Madrid",
+    "event_date": "2025-06-25",
+    "event_time": "17:00:00",
+    "max_participants": 20,
+    "user_id": 1
+  },
+  {
+    "id": 3,
+    "title": "Taller de manualidades",
+    "description": "Aprende a crear decoraciones con materiales reciclados.",
+    "location": "Centro Cultural de Barcelona",
+    "city": "Barcelona",
+    "event_date": "2025-06-19",
+    "event_time": "10:00:00",
+    "max_participants": 15,
+    "user_id": 2
+  },
+  {
+    "id": 4,
+    "title": "Caminata en la montaña",
+    "description": "Explora la naturaleza con una caminata guiada.",
+    "location": "Montaña de Montserrat",
+    "city": "Barcelona",
+    "event_date": "2025-06-15",
+    "event_time": "08:00:00",
+    "max_participants": 10,
+    "user_id": 3
+  },
+  {
+    "id": 5,
+    "title": "Clase de yoga al aire libre",
+    "description": "Relájate y conecta con la naturaleza en esta clase de yoga.",
+    "location": "Parque María Luisa",
+    "city": "Sevilla",
+    "event_date": "2025-06-22",
+    "event_time": "09:00:00",
+    "max_participants": 25,
+    "user_id": 4
+  },
+  {
+    "id": 6,
+    "title": "Picnic familiar",
+    "description": "Trae tu comida y disfruta de un picnic con otras familias.",
+    "location": "Parque de la Ciudadela",
+    "city": "Valencia",
+    "event_date": "2025-06-19",
+    "event_time": "12:00:00",
+    "max_participants": 30,
+    "user_id": 5
+  },
+  {
+    "id": 20,
+    "title": "Gincana para peques",
+    "description": "Gincana familiar en la Plaza Madrid, se harán diferentes actividades.",
+    "location": "Plaza Madrid",
+    "city": "Jerez de la Frontera",
+    "event_date": "2025-06-10",
+    "event_time": "11:30:00",
+    "max_participants": 10,
+    "user_id": 76
+  }
+]

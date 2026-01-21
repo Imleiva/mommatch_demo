@@ -1,0 +1,127 @@
+/* Contenedor del spinner */
+.custom-spinner-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  height: 100%;
+}
+
+/* Spinner principal */
+.custom-spinner {
+  width: 80px;
+  height: 80px;
+  display: inline-block;
+  overflow: hidden;
+  background: none;
+}
+
+/* Animación personalizada */
+.custom-spinner-animation {
+  width: 100%;
+  height: 100%;
+  position: relative;
+  transform: translateZ(0) scale(1);
+  backface-visibility: hidden;
+  transform-origin: 0 0;
+}
+
+.custom-spinner-animation div {
+  left: 38px;
+  top: 3px;
+  position: absolute;
+  animation: custom-spinner-animation linear 1.8s infinite;
+  background: var(--color-dark); /* Usa tu color personalizado */
+  width: 5px;
+  height: 13px;
+  border-radius: 2.5px / 3.5px;
+  transform-origin: 2.5px 33.5px;
+}
+
+.custom-spinner-animation div:nth-child(1) {
+  transform: rotate(0deg);
+  animation-delay: -1.7s;
+  background: var(--color-dark);
+}
+
+.custom-spinner-animation div:nth-child(2) {
+  transform: rotate(30deg);
+  animation-delay: -1.5s;
+  background: var(--color-primary); /* Cambia a otro color */
+}
+
+.custom-spinner-animation div:nth-child(3) {
+  transform: rotate(60deg);
+  animation-delay: -1.3s;
+  background: var(--color-secondary); /* Cambia a otro color */
+}
+
+.custom-spinner-animation div:nth-child(4) {
+  transform: rotate(90deg);
+  animation-delay: -1.1s;
+  background: var(--color-accent); /* Cambia a otro color */
+}
+
+.custom-spinner-animation div:nth-child(5) {
+  transform: rotate(120deg);
+  animation-delay: -0.9s;
+  background: var(--color-dark);
+}
+
+.custom-spinner-animation div:nth-child(6) {
+  transform: rotate(150deg);
+  animation-delay: -0.7s;
+  background: var(--color-primary);
+}
+
+.custom-spinner-animation div:nth-child(7) {
+  transform: rotate(180deg);
+  animation-delay: -0.5s;
+  background: var(--color-secondary);
+}
+
+.custom-spinner-animation div:nth-child(8) {
+  transform: rotate(210deg);
+  animation-delay: -0.3s;
+  background: var(--color-accent);
+}
+
+.custom-spinner-animation div:nth-child(9) {
+  transform: rotate(240deg);
+  animation-delay: -0.1s;
+  background: var(--color-dark);
+}
+
+.custom-spinner-animation div:nth-child(10) {
+  transform: rotate(270deg);
+  animation-delay: 0s;
+  background: var(--color-primary);
+}
+
+.custom-spinner-animation div:nth-child(11) {
+  transform: rotate(300deg);
+  animation-delay: 0.1s;
+  background: var(--color-secondary);
+}
+
+.custom-spinner-animation div:nth-child(12) {
+  transform: rotate(330deg);
+  animation-delay: 0.2s;
+  background: var(--color-accent);
+}
+
+@keyframes custom-spinner-animation {
+  0% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0;
+  }
+}
+
+/* Texto debajo del spinner */
+.custom-spinner-text {
+  margin-top: 10px;
+  font-size: 14px;
+  color: var(--color-dark);
+}

@@ -1,0 +1,152 @@
+[
+  {
+    "id": 1,
+    "name": "Ana",
+    "email": "ana@example.com",
+    "password": "$2y$10$u3Rjb1cp6u9juQOaU4zOoOyIc0LtmxlIQ0aU2yYBXiNlsfwnICtzi",
+    "last_active": "2025-06-10T01:53:09",
+    "created_at": "2025-04-07T16:07:42",
+    "updated_at": "2025-06-10T01:53:09",
+    "profile_completed": 1
+  },
+  {
+    "id": 2,
+    "name": "Beatriz",
+    "email": "beatriz@example.com",
+    "password": "$2y$10$u3Rjb1cp6u9juQOaU4zOoOyIc0LtmxlIQ0aU2yYBXiNlsfwnICtzi",
+    "last_active": null,
+    "created_at": "2025-04-07T16:07:42",
+    "updated_at": "2025-04-07T16:07:42",
+    "profile_completed": 1
+  },
+  {
+    "id": 3,
+    "name": "Carmen",
+    "email": "carmen@example.com",
+    "password": "$2y$10$u3Rjb1cp6u9juQOaU4zOoOyIc0LtmxlIQ0aU2yYBXiNlsfwnICtzi",
+    "last_active": "2025-06-08T14:20:00",
+    "created_at": "2025-04-10T10:15:00",
+    "updated_at": "2025-06-08T14:20:00",
+    "profile_completed": 1
+  },
+  {
+    "id": 4,
+    "name": "Diana",
+    "email": "diana@example.com",
+    "password": "$2y$10$u3Rjb1cp6u9juQOaU4zOoOyIc0LtmxlIQ0aU2yYBXiNlsfwnICtzi",
+    "last_active": "2025-06-09T09:30:00",
+    "created_at": "2025-04-12T11:00:00",
+    "updated_at": "2025-06-09T09:30:00",
+    "profile_completed": 1
+  },
+  {
+    "id": 5,
+    "name": "Elena",
+    "email": "elena@example.com",
+    "password": "$2y$10$u3Rjb1cp6u9juQOaU4zOoOyIc0LtmxlIQ0aU2yYBXiNlsfwnICtzi",
+    "last_active": "2025-06-10T16:45:00",
+    "created_at": "2025-04-15T13:30:00",
+    "updated_at": "2025-06-10T16:45:00",
+    "profile_completed": 1
+  },
+  {
+    "id": 6,
+    "name": "Fernanda",
+    "email": "fernanda@example.com",
+    "password": "$2y$10$u3Rjb1cp6u9juQOaU4zOoOyIc0LtmxlIQ0aU2yYBXiNlsfwnICtzi",
+    "last_active": "2025-06-07T12:00:00",
+    "created_at": "2025-04-18T15:00:00",
+    "updated_at": "2025-06-07T12:00:00",
+    "profile_completed": 1
+  },
+  {
+    "id": 7,
+    "name": "Gloria",
+    "email": "gloria@example.com",
+    "password": "$2y$10$u3Rjb1cp6u9juQOaU4zOoOyIc0LtmxlIQ0aU2yYBXiNlsfwnICtzi",
+    "last_active": "2025-06-09T18:20:00",
+    "created_at": "2025-04-20T09:45:00",
+    "updated_at": "2025-06-09T18:20:00",
+    "profile_completed": 1
+  },
+  {
+    "id": 8,
+    "name": "Helena",
+    "email": "helena@example.com",
+    "password": "$2y$10$u3Rjb1cp6u9juQOaU4zOoOyIc0LtmxlIQ0aU2yYBXiNlsfwnICtzi",
+    "last_active": "2025-06-08T10:15:00",
+    "created_at": "2025-04-22T14:00:00",
+    "updated_at": "2025-06-08T10:15:00",
+    "profile_completed": 1
+  },
+  {
+    "id": 9,
+    "name": "Isabel",
+    "email": "isabel@example.com",
+    "password": "$2y$10$u3Rjb1cp6u9juQOaU4zOoOyIc0LtmxlIQ0aU2yYBXiNlsfwnICtzi",
+    "last_active": "2025-06-10T11:30:00",
+    "created_at": "2025-04-25T16:30:00",
+    "updated_at": "2025-06-10T11:30:00",
+    "profile_completed": 1
+  },
+  {
+    "id": 10,
+    "name": "Julia",
+    "email": "julia@example.com",
+    "password": "$2y$10$u3Rjb1cp6u9juQOaU4zOoOyIc0LtmxlIQ0aU2yYBXiNlsfwnICtzi",
+    "last_active": "2025-06-09T13:45:00",
+    "created_at": "2025-04-28T10:00:00",
+    "updated_at": "2025-06-09T13:45:00",
+    "profile_completed": 1
+  },
+  {
+    "id": 12,
+    "name": "Laura",
+    "email": "laura@example.com",
+    "password": "$2y$10$u3Rjb1cp6u9juQOaU4zOoOyIc0LtmxlIQ0aU2yYBXiNlsfwnICtzi",
+    "last_active": "2025-06-08T15:00:00",
+    "created_at": "2025-05-02T12:00:00",
+    "updated_at": "2025-06-08T15:00:00",
+    "profile_completed": 1
+  },
+  {
+    "id": 13,
+    "name": "Marta",
+    "email": "marta@example.com",
+    "password": "$2y$10$u3Rjb1cp6u9juQOaU4zOoOyIc0LtmxlIQ0aU2yYBXiNlsfwnICtzi",
+    "last_active": "2025-06-10T09:00:00",
+    "created_at": "2025-05-05T14:30:00",
+    "updated_at": "2025-06-10T09:00:00",
+    "profile_completed": 1
+  },
+  {
+    "id": 15,
+    "name": "Natalia",
+    "email": "natalia@example.com",
+    "password": "$2y$10$u3Rjb1cp6u9juQOaU4zOoOyIc0LtmxlIQ0aU2yYBXiNlsfwnICtzi",
+    "last_active": "2025-06-07T16:30:00",
+    "created_at": "2025-05-08T11:00:00",
+    "updated_at": "2025-06-07T16:30:00",
+    "profile_completed": 1
+  },
+  {
+    "id": 16,
+    "name": "Olivia",
+    "email": "olivia@example.com",
+    "password": "$2y$10$u3Rjb1cp6u9juQOaU4zOoOyIc0LtmxlIQ0aU2yYBXiNlsfwnICtzi",
+    "last_active": "2025-06-09T12:00:00",
+    "created_at": "2025-05-10T13:15:00",
+    "updated_at": "2025-06-09T12:00:00",
+    "profile_completed": 1
+  },
+  {
+    "id": 17,
+    "name": "Paula",
+    "email": "paula@example.com",
+    "password": "$2y$10$u3Rjb1cp6u9juQOaU4zOoOyIc0LtmxlIQ0aU2yYBXiNlsfwnICtzi",
+    "last_active": "2025-06-08T14:45:00",
+    "created_at": "2025-05-12T15:30:00",
+    "updated_at": "2025-06-08T14:45:00",
+    "profile_completed": 1
+  }
+]

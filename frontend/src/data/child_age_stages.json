@@ -1,0 +1,8 @@
+[
+  { "id": 1, "stage_name": "Bebé", "age_range": "0-2 años" },
+  { "id": 2, "stage_name": "Primera infancia", "age_range": "3-5 años" },
+  { "id": 3, "stage_name": "Infantil", "age_range": "6-9 años" },
+  { "id": 4, "stage_name": "Preadolescente", "age_range": "10-12 años" },
+  { "id": 5, "stage_name": "Adolescente", "age_range": "13-17 años" },
+  { "id": 6, "stage_name": "Mayor de edad", "age_range": "18+ años" }
+]

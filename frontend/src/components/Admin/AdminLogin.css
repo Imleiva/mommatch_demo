@@ -1,0 +1,92 @@
+.admin-login-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  background-color: #f9f9f9;
+  font-family: "Poppins", sans-serif;
+}
+
+.admin-login-box {
+  background-color: #fff;
+  padding: 30px;
+  border-radius: 8px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  width: 100%;
+  max-width: 400px;
+  text-align: center;
+}
+
+.admin-login-header h1 {
+  font-size: 28px;
+  color: var(--color-primary);
+  margin: 0;
+}
+
+.admin-login-header h2 {
+  font-size: 18px;
+  color: #666;
+  margin: 5px 0 20px;
+}
+
+.admin-login-error {
+  background-color: #f8d7da;
+  color: #721c24;
+  padding: 10px;
+  border: 1px solid #f5c6cb;
+  border-radius: 5px;
+  margin-bottom: 20px;
+}
+
+.admin-login-form {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+
+.admin-form-group label {
+  font-size: 14px;
+  color: #333;
+  text-align: left;
+  display: block;
+  margin-bottom: 5px;
+}
+
+.admin-form-group input {
+  width: 100%;
+  padding: 10px;
+  border: 1px solid #ddd;
+  border-radius: 5px;
+  font-size: 14px;
+}
+
+.admin-login-button {
+  padding: 10px 15px;
+  background-color: var(--color-primary);
+  color: #fff;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: 16px;
+  transition: background-color 0.3s ease;
+}
+
+.admin-login-button:hover {
+  background-color: var(--color-primary-dark);
+}
+
+.admin-login-footer {
+  margin-top: 20px;
+  font-size: 14px;
+  color: #666;
+}
+
+.admin-back-link {
+  color: var(--color-primary);
+  text-decoration: none;
+  font-weight: bold;
+}
+
+.admin-back-link:hover {
+  text-decoration: underline;
+}

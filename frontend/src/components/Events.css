@@ -1,0 +1,929 @@
+/* Estilos para la sección de eventos */
+.events-container {
+  max-width: 1100px !important;
+  margin: 5rem auto !important;
+  padding: 1.5rem 0.7rem !important;
+  background-color: #fafafa;
+  border-radius: 14px !important;
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.08);
+  overflow: hidden;
+  position: relative;
+  z-index: 1;
+}
+
+/* Título centrado */
+.events-title {
+  text-align: center;
+  width: 100%;
+  padding-top: 2rem; /* Reduced padding */
+  color: var(--color-dark);
+  font-size: 1.7rem; /* Reduced font size */
+  font-weight: bold;
+}
+
+/* Contenedor del formulario modal - Mejorado con imagen de fondo y sin scroll */
+.event-form-modal {
+  background-color: rgb(240, 230, 230) !important;
+  background-image: url("../assets/images/comunidad/foro/eventos/evento4.jpg") !important;
+  background-size: cover !important;
+  background-position: center !important;
+  background-repeat: no-repeat !important;
+  background-blend-mode: normal;
+  height: 640px;
+  margin: 2.2rem auto;
+  border-radius: 15px;
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.15);
+  width: 1200px;
+  max-width: 74vw;
+  position: fixed;
+  z-index: 1000;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+/* Capa translúcida para mejorar contraste con el formulario*/
+.event-form-modal::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(255, 223, 168, 0.15);
+  border-radius: inherit;
+  z-index: 0;
+}
+
+/* Ajuste para el contenedor del formulario */
+.event-form-container {
+  position: relative;
+  width: 100%;
+  max-width: 565px;
+  background-color: rgba(255, 222, 74, 0.653);
+  border-radius: var(--border-radius-md);
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+  padding: 8px;
+  z-index: 1;
+  max-height: calc(100vh - 110px);
+  overflow-y: auto;
+}
+
+/* Estilo para el botón de cerrar modal (X) - Ajustado para posicionamiento */
+.close-modal-button {
+  position: absolute;
+  top: 15px;
+  right: 15px;
+  background-color: white;
+  border: none;
+  font-size: 1.5rem;
+  line-height: 1;
+  cursor: pointer;
+  color: var(--color-text);
+  transition: color 0.3s, transform 0.3s;
+  padding: 3px;
+  z-index: 101;
+  width: 30px;
+  height: 30px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 50%;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+.close-modal-button:hover {
+  color: var(--color-primary);
+  background-color: rgba(255, 107, 152, 0.1);
+  transform: scale(1.1);
+}
+
+/* Overlay para el fondo cuando el modal está abierto */
+.event-form-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: rgba(5, 5, 5, 0.5);
+  z-index: 999;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.event-form {
+  width: 100%;
+  padding: 18px;
+  background-color: white;
+  border-radius: var(--border-radius-md);
+  display: flex;
+  flex-direction: column;
+  gap: 0;
+  max-width: 550px;
+  margin: 0 auto;
+  max-height: calc(100vh - 120px);
+}
+
+.event-form h3 {
+  color: var(--color-dark);
+  margin-top: 0;
+  margin-bottom: -3px; /* Reduced margin */
+  text-align: center;
+  font-size: 1rem; /* Reduced font size */
+}
+
+/* Grilla mejorada para aprovechar el espacio horizontal - Más compacta */
+.form-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 4px;
+  position: relative;
+  margin-bottom: 1px;
+  max-width: 780px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+/* Para campos que ocupan todo el ancho */
+.form-grid-full {
+  grid-column: 1 / -1;
+}
+
+/* Campos de medio ancho */
+.form-grid-half {
+  grid-column: span 1;
+}
+
+/* Primera columna: Título, Lugar, Fecha */
+.form-group:nth-child(1) {
+  grid-column: 1 / -1;
+  font-size: 0.8rem;
+}
+
+.form-group:nth-child(2) {
+  grid-column: 1;
+  grid-row: 2;
+  font-size: 0.8rem;
+}
+
+.form-group:nth-child(4) {
+  grid-column: 1;
+  grid-row: 3;
+  font-size: 0.8rem;
+}
+
+/*participantes máximos */
+.form-group:nth-child(6) {
+  grid-column: 1;
+  grid-row: 4;
+  position: relative;
+  display: flex;
+  flex-wrap: nowrap;
+  align-items: center;
+  font-size: 0.8rem;
+}
+
+/* Ajuste del ancho del input para dejar espacio para el checkbox */
+.form-group:nth-child(7) input {
+  width: 70%; /* Reducir el ancho para dejar espacio al checkbox */
+  font-size: 0.8rem;
+}
+
+/* Nueva regla para el checkbox - colocado al lado */
+.no-limit-checkbox-container {
+  display: flex;
+  align-items: center;
+  margin-left: 12px; /* Espacio entre el input y el checkbox */
+  white-space: nowrap; /* Evitar que el texto se rompa */
+}
+
+/* Estilo para el checkbox "sin límite"*/
+.no-limit-checkbox {
+  display: inline-flex;
+  align-items: center;
+  margin-right: -100px;
+  padding: 4px 0;
+}
+
+/* Mejorar la apariencia del checkbox para que coincida con el estilo de la página */
+.no-limit-checkbox input[type="checkbox"] {
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+  width: 16px;
+  height: 16px;
+  background-color: white;
+  border: 1.5px solid #ccc;
+  position: absolute;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  border-radius: 4px;
+  margin-right: 5px;
+}
+
+.no-limit-checkbox input[type="checkbox"]:checked {
+  background-color: var(--color-accent);
+  border-color: var(--color-accent);
+}
+
+.no-limit-checkbox input[type="checkbox"]:checked::after {
+  content: "✓";
+  color: white;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  font-size: 11px; /* Tamaño ligeramente mayor */
+  font-weight: bold; /* Más visible */
+  line-height: 1;
+}
+
+.no-limit-checkbox label {
+  font-size: 0.8rem;
+  margin-left: 20px;
+  margin-right: -10px;
+  padding: 0;
+  display: inline-block;
+  flex: none;
+}
+
+/* Ajustar espaciado para que todo quede alineado correctamente */
+.form-group:nth-child(6) label {
+  width: auto;
+  margin-bottom: 0px;
+  margin-right: 8px;
+  font-size: 0.8rem;
+  display: flex;
+}
+
+/* Segunda columna: Ciudad, Hora */
+.form-group:nth-child(3) {
+  grid-column: 2;
+  grid-row: 2;
+  font-size: 0.8rem;
+}
+
+.form-group:nth-child(5) {
+  grid-column: 2;
+  grid-row: 3;
+  font-size: 0.8rem;
+}
+
+/* Descripción: Debajo de ambas columnas, ancho completo */
+.form-group:nth-child(7) {
+  grid-column: 1 / -1;
+  grid-row: 5;
+  font-size: 0.8rem;
+}
+
+.form-group textarea {
+  min-height: 70px;
+  max-height: 70px;
+}
+
+.form-group {
+  margin-bottom: 10px;
+}
+
+/* Asegurar que el input de ciudad tenga el mismo estilo que los demás */
+.form-grid .form-group .city-autocomplete-container input {
+  margin-top: 1rem;
+  padding: 4px;
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  font-size: 0.7rem;
+  font-family: "Poppins", sans-serif;
+  transition: border-color 0.3s, box-shadow 0.3s;
+  background-color: var(--color-light);
+}
+
+.form-grid .form-group .city-autocomplete-container input:focus {
+  border-color: var(--color-primary);
+  outline: none;
+}
+
+/* Estilo para los elementos de la lista desplegable del autocompletado */
+.form-grid .form-group .city-autocomplete-dropdown {
+  position: absolute;
+  top: 100%;
+  left: 0;
+  width: 100%;
+  z-index: 1000;
+  max-height: 200px; /* Limita la altura para evitar que empuje el contenido */
+  overflow-y: auto;
+  border: 1px solid #ccc;
+  border-radius: 0 0 8px 8px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  font-size: 0.5rem;
+  background-color: white;
+}
+
+.form-grid .form-group .city-autocomplete-dropdown-item {
+  padding: 8px 6px;
+  cursor: pointer;
+  transition: background-color 0.2s;
+}
+
+.form-grid .form-group .city-autocomplete-dropdown-item:hover {
+  background-color: rgba(255, 107, 152, 0.1);
+}
+
+/* Ajuste del espacio entre el último campo y los botones */
+.form-actions {
+  display: flex;
+  justify-content: flex-end;
+  margin-top: 8px;
+  gap: 8px;
+  align-items: center;
+}
+
+/* Estilos mejorados para los botones de acción */
+.cancel-button,
+.submit-button {
+  padding: 10px 12px !important;
+  border-radius: 25px;
+  font-weight: 500;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  color: white;
+  font-family: "Poppins", sans-serif;
+  font-size: 0.9rem;
+  min-width: 110px;
+  text-align: center;
+  height: 30px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 0 0 -6px 1px;
+}
+
+.cancel-button {
+  background-color: var(--color-primary);
+  border: 1px solid #ddd;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
+}
+
+.cancel-button:hover {
+  background-color: var(--color-primary);
+  border-color: var(--color-primary);
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.5);
+}
+
+.submit-button {
+  background-color: var(--color-accent);
+  box-shadow: 0 3px 6px rgba(109, 195, 255, 0.2);
+}
+
+.submit-button:hover {
+  background-color: var(--color-accent-dark);
+  box-shadow: 0 6px 12px rgba(109, 195, 255, 0.3);
+}
+
+/* Asegurar que no haya márgenes adicionales que afecten el espacio */
+.form-group:last-of-type {
+  margin-bottom: -10px;
+}
+
+/* Contenedor de acciones en la cabecera */
+.events-header-actions {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: var(--space-md);
+  flex-wrap: wrap;
+  gap: 5px;
+}
+
+/* Lista de eventos */
+.events-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 20px;
+  width: 100%;
+  margin: 0 auto;
+  min-height: 400px;
+  transition: opacity 0.3s ease;
+}
+
+/* Estilo opcional para atenuar mientras carga */
+.events-grid.loading {
+  opacity: 0.4;
+}
+
+/* Tarjeta de evento */
+.event-card {
+  position: relative;
+  background-color: var(--color-light);
+  border: 1px solid var(--color-border);
+  border-radius: var(--border-radius-md);
+  box-shadow: var(--box-shadow);
+  overflow: hidden;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  padding: 10px; /* Reduced padding */
+  padding-top: calc(var(--space-md) + 1.5rem);
+  min-height: 180px; /* Reduced minimum height */
+}
+
+.event-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 6px 15px rgba(0, 0, 0, 0.15);
+}
+
+/* Sobrescribir el hover para eventos pasados */
+.event-card.past-event:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+}
+
+/* Sobrescribir el hover para eventos pasados */
+.event-card.past-event:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+}
+
+.event-card-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: var(--space-sm);
+}
+
+.event-card-header h3 {
+  font-size: 1.2rem; /* Reduced font size */
+  font-weight: 600;
+  color: var(--color-dark);
+  margin: 0 5px;
+  margin-top: 1rem;
+}
+
+.event-description {
+  font-size: 0.95rem;
+  color: var(--color-text);
+  margin: 0 5px;
+  line-height: 1.4;
+  flex-grow: 1;
+}
+
+.event-status {
+  position: absolute;
+  top: var(--space-sm);
+  right: var(--space-sm);
+  font-size: 0.9rem;
+  font-weight: 600;
+  color: white;
+  padding: 0.2rem 0.5rem;
+  border-radius: var(--border-radius-sm);
+  text-transform: uppercase;
+  z-index: 1;
+}
+
+/* Estilos específicos para cada estado */
+.event-status.registered {
+  background-color: #418041ba;
+}
+
+.event-status.unlimited {
+  background-color: var(--color-info);
+}
+
+.event-status.full {
+  background-color: var(--color-error);
+}
+
+.event-status.available {
+  background-color: var(--color-primary);
+}
+
+.event-status.past {
+  background-color: #8b8b8b;
+}
+
+/* Estilo adicional para tarjetas de eventos pasados */
+.event-card.past-event {
+  opacity: 0.65;
+  border-color: #c7c3c3;
+  position: relative;
+  transition: all 0.3s ease;
+}
+
+.event-card.past-event::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(112, 111, 111, 0.119);
+  z-index: 0;
+  pointer-events: none;
+  border-radius: inherit;
+}
+
+/* Asegurarse que el contenido permanezca sobre la capa de oscurecimiento */
+.event-card.past-event .event-card-header,
+.event-card.past-event .event-card-body,
+.event-card.past-event .event-status,
+.event-card.past-event .event-actions {
+  z-index: 1;
+}
+
+/* Indicador de evento pasado*/
+.past-event-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 1;
+  pointer-events: none;
+}
+
+.past-event-icon {
+  font-size: 4rem;
+  color: rgba(139, 139, 139, 0.25);
+  transform: rotate(-15deg);
+  text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.2);
+}
+
+.event-card-body {
+  flex-grow: 1;
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-sm);
+}
+
+.event-info {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-xs);
+}
+
+.event-meta p {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  font-size: 0.85rem;
+  color: var(--color-text);
+  margin: 0 5px;
+}
+
+.event-creator {
+  display: flex;
+  align-items: center;
+  margin-top: var(--space-sm);
+}
+
+.event-creator-avatar img {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  object-fit: cover;
+  border: 2px solid var(--color-border);
+}
+
+.event-creator-info {
+  margin-left: var(--space-sm);
+}
+
+.event-creator-name {
+  font-size: 1rem;
+  font-weight: 600;
+  color: var(--color-dark);
+}
+
+.event-participants {
+  font-size: 0.85rem;
+  color: var(--color-text-light);
+}
+
+/* Posicionar los botones de acción fijos en la parte inferior */
+.event-actions {
+  position: absolute;
+  bottom: 15px;
+  left: 0;
+  right: 0;
+  display: flex;
+  justify-content: center;
+  padding: 0 15px;
+  width: 100%;
+  box-sizing: border-box;
+  background-color: inherit;
+  border-top: 1px solid rgba(0, 0, 0, 0.05);
+  padding-top: 8px;
+}
+
+/* Estilos específicos para el selector de fecha */
+.calendar-input {
+  background-image: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='16' height='16' fill='%23FF6B98' viewBox='0 0 16 16'><path d='M3.5 0a.5.5 0 0 1 .5.5V1h8V.5a.5.5 0 0 1 1 0V1h1a2 2 0 0 1 2 2v11a2 2 0 0 1-2 2H2a2 2 0 0 1-2-2V3a2 2 0 0 1 2-2h1V.5a.5.5 0 0 1 .5-.5zM1 4v10a1 1 0 0 0 1 1h12a1 1 0 0 0 1-1V4H1z'/></svg>");
+  background-color: var(--color-light);
+  background-repeat: no-repeat;
+  background-position: calc(100% - 10px) center;
+  background-size: 16px;
+  padding-right: 36px;
+  height: 34px !important;
+  min-height: 34px;
+  color: var(--color-text);
+}
+
+/* Estilos específicos para el selector de hora */
+.time-input {
+  background-image: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='16' height='16' fill='%23FF6B98' viewBox='0 0 16 16'><path d='M8 3.5a.5.5 0 0 0-1 0V9a.5.5 0 0 0 .252.434l3.5 2a.5.5 0 0 0 .496-.868L8 8.71V3.5z'/><path d='M8 16A8 8 0 1 0 8 0a8 8 0 0 0 0 16zm7-8A7 7 0 1 1 1 8a7 7 0 0 1 14 0z'/></svg>");
+  background-color: var(--color-light);
+  background-repeat: no-repeat;
+  background-position: calc(100% - 10px) center;
+  background-size: 16px;
+  padding-right: 36px;
+  height: 34px !important;
+  min-height: 34px;
+  border-radius: 8px;
+  color: var(--color-text);
+}
+
+/* Ajustar apariencia nativa en navegadores */
+input[type="date"]::-webkit-calendar-picker-indicator,
+input[type="time"]::-webkit-calendar-picker-indicator {
+  opacity: 0;
+  width: 36px;
+  height: 36px;
+  cursor: pointer;
+}
+
+/* Ajustar apariencia nativa en navegadores */
+input[type="date"]::-webkit-calendar-picker-indicator,
+input[type="time"]::-webkit-calendar-picker-indicator {
+  opacity: 0;
+  width: 36px;
+  height: 36px;
+  cursor: pointer;
+}
+
+.event-confirmation.success {
+  background-color: #d4edda;
+  border-left: 4px solid #28a745;
+}
+
+.event-confirmation.error {
+  background-color: #f8d7da;
+  border-left: 4px solid #dc3545;
+}
+
+.event-confirmation h4 {
+  margin-top: 0;
+  color: #333;
+  font-weight: 600;
+}
+
+.event-confirmation p {
+  margin-bottom: 0;
+}
+
+/* Mensaje de alerta */
+.alert {
+  width: 100%;
+  max-width: 800px;
+  padding: 12px 16px;
+  margin: 10px 0;
+  border-radius: var(--border-radius-sm);
+  position: relative;
+  animation: fadeIn 0.3s ease;
+}
+
+.alert-success {
+  background-color: #d4edda;
+  color: #155724;
+  border-left: 4px solid #28a745;
+}
+
+.alert-error {
+  background-color: #f8d7da;
+  color: #721c24;
+  border-left: 4px solid #dc3545;
+}
+
+.close-alert {
+  position: absolute;
+  right: 10px;
+  top: 10px;
+  background: none;
+  border: none;
+  font-size: 1.2rem;
+  line-height: 1;
+  cursor: pointer;
+  opacity: 0.7;
+  transition: opacity 0.3s;
+}
+
+.close-alert:hover {
+  opacity: 1;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(-5px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Mensaje de no eventos */
+.no-events {
+  text-align: center;
+  padding: 15px; /* Reduced padding */
+  color: var(--color-text-light);
+  font-style: italic;
+  min-height: 400px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  font-size: 0.9rem; /* Reduced font size */
+}
+
+/* Mensajes dentro de las tarjetas de eventos */
+.event-message {
+  margin: 10px 0;
+  padding: 6px 10px; /* Reduced padding */
+  border-radius: var(--border-radius-sm);
+  font-size: 0.8rem; /* Reduced font size */
+  text-align: center;
+  transition: all 0.3s ease;
+  animation: fadeIn 0.3s ease;
+}
+
+.event-message.success {
+  background-color: var(--color-success-light);
+  color: var(--color-success-dark);
+  border: 1px solid var(--color-success);
+}
+
+.event-message.error {
+  background-color: var(--color-error-light);
+  color: var(--color-error-dark);
+  border: 1px solid var(--color-error);
+}
+
+/* Estilo para el botón de abrir formulario - Mejorado para interacción con modal */
+.open-form-button {
+  background-color: var(--color-accent);
+  color: white;
+  border: none;
+  padding: 10px 10px;
+  border-radius: 30px;
+  font-size: 0.9rem !important;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  box-shadow: 0 4px 6px rgba(109, 195, 255, 0.2);
+  margin: 10px 0;
+  position: relative;
+  z-index: 10;
+  min-width: 100px;
+  text-align: center;
+  outline: none;
+}
+.open-form-button:hover {
+  background-color: var(--color-accent-dark);
+  box-shadow: 0 6px 12px rgba(109, 195, 255, 0.3);
+}
+
+/* Estilo especial cuando el botón está debajo del modal */
+.open-form-button.behind-modal {
+  opacity: 0;
+  pointer-events: none;
+  position: relative;
+  z-index: 1;
+}
+
+/* Estilos para inputs dentro del formulario de eventos */
+.event-form input,
+.event-form textarea,
+.form-group input,
+.form-group textarea,
+.date-time-input {
+  background-color: white;
+  border: 1px solid #ccc;
+  font-size: 0.8rem;
+  transition: border-color 0.3s, box-shadow 0.3s;
+  padding: 4px 8px;
+  width: 100%;
+}
+
+.event-form input:focus,
+.event-form textarea:focus,
+.form-group input:focus,
+.form-group textarea:focus,
+.date-time-input:focus {
+  border-color: var(--color-primary);
+  outline: none;
+  box-shadow: 0 0 0 2px rgba(255, 107, 152, 0.2);
+  background-color: white;
+}
+
+/* Event Form specific styles aaaa */
+.no-limit-checkbox {
+  display: flex;
+  align-items: center;
+  margin-left: 22px;
+  margin-bottom: 0;
+}
+
+.no-limit-checkbox input[type="checkbox"] {
+  margin-right: 1px;
+}
+
+.no-limit-checkbox label {
+  font-size: 0.8rem;
+  margin-bottom: 0;
+}
+
+@media (max-width: 768px) {
+  .form-grid {
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+  }
+
+  .form-group {
+    margin-bottom: 5px;
+  }
+
+  .description-textarea {
+    min-height: 70px;
+    max-height: 70px;
+  }
+}
+
+/* Modificar el contenedor de la tarjeta para posicionamiento relativo */
+.event-card {
+  position: relative;
+  padding-bottom: 70px;
+  min-height: 180px;
+  display: flex;
+  flex-direction: column;
+}
+
+/* Posicionar los botones de acción fijos en la parte inferior */
+.event-actions {
+  position: absolute;
+  bottom: 15px;
+  left: 0;
+  right: 0;
+  display: flex;
+  justify-content: center;
+  padding: 0 15px;
+  width: 100%;
+  box-sizing: border-box;
+  background-color: inherit;
+  border-top: 1px solid rgba(0, 0, 0, 0.05);
+  padding-top: 8px;
+}
+
+.event-unregister-btn,
+.event-register-btn {
+  width: 80%;
+  background-color: var(--color-primary);
+  border-radius: 18px;
+  margin: 0;
+  padding: 6px 12px;
+  font-weight: 500;
+  font-size: 0.9rem;
+  font-family: poppins, sans-serif;
+  color: white;
+  transition: all 0.2s ease;
+}
+
+.event-register-btn:disabled,
+.event-unregister-btn:disabled {
+  background-color: #a0a0a0;
+  color: #f5f5f5;
+  cursor: not-allowed;
+  opacity: 0.8;
+  box-shadow: none;
+}
+
+/* Botón específico para eventos pasados */
+.event-register-btn:disabled:hover {
+  background-color: #a0a0a0;
+  transform: none;
+  box-shadow: none;
+}
+
+/* Estilo específico para el botón de eventos pasados */
+button.event-register-btn:disabled[value="Evento pasado"] {
+  background-color: #8b8b8b;
+  color: #ffffff;
+  font-style: italic;
+}

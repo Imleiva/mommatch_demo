@@ -1,0 +1,256 @@
+/* Estilos base para el Chat de Matches */
+.match-chat-container {
+  display: flex;
+  flex-direction: column;
+  height: 590px !important;
+  max-height: 590px;
+  width: 580px !important;
+  max-width: 700px !important;
+  margin-bottom: -2.65rem !important;
+  margin: auto;
+  background-color: #ffffff;
+  border-radius: 10px;
+  overflow: hidden;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+  font-family: "Poppins", sans-serif;
+}
+
+/* Cabecera del chat de matches */
+.match-chat-header {
+  border-radius: 10px 10px 0 0;
+  display: flex;
+  height: 5.8rem;
+  align-items: center;
+  padding: 19px;
+  background-color: var(--color-primary);
+  border-bottom: 1px solid #e0e0e0;
+}
+
+.match-chat-profile-photo {
+  width: 70px;
+  height: 70px;
+  border-radius: 50%;
+  margin-right: 12px;
+  margin-top: -1.4rem;
+  object-fit: cover;
+  position: fixed;
+  border: 2px solid white;
+}
+
+.match-chat-header h3 {
+  margin: 0 5rem 0rem 5rem;
+  font-size: 1rem;
+  color: white;
+  font-weight: 550;
+  position: relative;
+  padding-bottom: 1px;
+  font-family: "Poppins", sans-serif;
+}
+
+/* Botón de cierre simplificado con solo icono X */
+.match-chat-close-btn {
+  position: relative;
+  margin-left: auto;
+  background-color: rgba(255, 255, 255, 0.3);
+  color: white;
+  border: none;
+  border-radius: 50%;
+  width: 30px;
+  height: 30px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  font-size: 20px;
+  z-index: 10;
+  transition: all 0.2s ease;
+}
+
+.match-chat-close-btn::before {
+  content: "×";
+  display: block;
+}
+
+.match-chat-close-btn:hover {
+  background-color: rgba(255, 255, 255, 0.7);
+  transform: scale(1.1);
+  box-shadow: 0 0 8px rgba(255, 255, 255, 0.5);
+}
+
+/* Contenido del chat de matches */
+.match-chat-body {
+  flex-grow: 1;
+  height: calc(100% - 6rem); /* Adjust height to fit within the container */
+  padding: 10px;
+  overflow-y: auto; /* Ensure messages are scrollable */
+  display: flex;
+  flex-direction: column;
+  background-color: #ffffff72;
+  min-height: 300px; /* Asegura que el chat tenga altura mínima mientras carga */
+}
+
+/* Mejora para el contenedor de mensajes */
+.match-chat-messages-list {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  overflow-y: auto;
+  padding: 10px 0;
+}
+
+.match-chat-loading,
+.match-chat-error,
+.match-chat-empty-message {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 100%;
+  padding: 20px;
+  text-align: center;
+  color: #999;
+}
+
+.match-chat-error {
+  color: #f44336;
+}
+
+/* Estilo para los mensajes de matches*/
+.match-chat-message {
+  display: flex;
+  padding: 5px 10px;
+  margin: 3px 0;
+  max-width: 70%;
+  word-wrap: break-word;
+  clear: both;
+  font-family: "Poppins", sans-serif;
+}
+
+/* Alinear a la derecha mensajes enviados */
+.match-my-message {
+  align-self: flex-end;
+  margin-left: auto;
+  margin-right: 0px;
+}
+
+/* Alinear a la izquierda mensajes recibidos */
+.match-other-message {
+  align-self: flex-start;
+  margin-right: auto;
+  margin-left: 2px;
+}
+
+.match-message-content {
+  padding: 8px 12px;
+  border-radius: 15px;
+  position: relative;
+  word-break: break-word;
+  font-family: "Poppins", sans-serif;
+}
+
+.match-my-message .match-message-content {
+  background-color: #e4edd7;
+  text-align: right;
+}
+
+.match-other-message .match-message-content {
+  background-color: #ffe7acc1;
+  text-align: left;
+}
+
+/* Mejorar el estilo del contenido de los mensajes */
+.match-message-content p {
+  margin: 0;
+  font-size: 0.9rem;
+  color: #333;
+  font-family: "Poppins", sans-serif;
+}
+
+.match-message-footer {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-size: 0.6rem;
+  margin-top: 1px;
+}
+
+.match-message-time {
+  font-size: 0.6rem;
+  color: #888;
+  margin-top: 3px;
+}
+
+/* Formulario para enviar mensajes en chat de matches */
+.match-chat-input-area {
+  display: flex;
+  padding: 6px;
+  background-color: #fff6ee73;
+  border-top: 1px solid #e0e0e0;
+}
+
+.match-chat-input {
+  flex-grow: 1;
+  padding: 6px 15px;
+  border: 1px solid var(--color-light);
+  border-radius: 15px;
+  margin-right: 10px;
+  outline: none;
+  font-size: 0.9rem;
+  font-family: "Poppins", sans-serif;
+}
+
+.match-chat-input:focus {
+  border-color: var(--color-primary);
+}
+
+.match-chat__send-btn {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 2px 18px;
+  height: 2.3rem;
+  background-color: var(--color-primary);
+  color: white;
+  border: none;
+  border-radius: 20px;
+  cursor: pointer;
+  width: auto;
+  transition: all 0.3s ease;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+  position: relative;
+  z-index: 2;
+  font-size: 0.8rem;
+  margin-top: 9px;
+  font-family: "Poppins", sans-serif;
+}
+
+.match-chat__send-btn:hover {
+  background-color: var(--color-primary-dark);
+  transform: translateY(-2px);
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.25);
+}
+
+.match-chat__send-btn:active {
+  transform: translateY(1px);
+  box-shadow: 0 1px 2px rgba(0, 0, 0, 0.3);
+}
+
+/* Establecer posición relativa en body para correcto apilamiento */
+body {
+  position: relative;
+}
+
+/* Ajustes responsivos */
+@media screen and (max-width: 768px) {
+  .match-chat-wrapper {
+    max-width: 95%;
+    max-height: 90vh;
+  }
+
+  .match-chat-container {
+    max-height: 90vh;
+  }
+
+  .match-chat-body {
+    padding: 15px;
+  }
+}
