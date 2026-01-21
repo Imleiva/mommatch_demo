@@ -6,11 +6,13 @@
 
 import "./App.css";
 import "./styles/global.css";
+import "./styles/mobile-responsive.css"; // Estilos responsive para móvil
 import { HashRouter as Router, Routes, Route } from "react-router-dom";
 import { AuthProvider } from "./context/AuthContext";
 import Header from "./components/Header";
 import ProtectedRoute from "./components/ProtectedRoute";
 import ScrollToTop from "./components/ScrollToTop"; // Importar el componente ScrollToTop
+import MobileWarning from "./components/MobileWarning"; // Banner de advertencia móvil
 import React, { useEffect, useState } from "react";
 import { getDemoUser } from "./services/api";
 
@@ -81,6 +83,8 @@ function App() {
     <Router>
       {/* Proveedor de contexto de autenticación para toda la aplicación */}
       <AuthProvider>
+        {/* Banner de advertencia para dispositivos móviles */}
+        <MobileWarning />
         {/* Componente que restablece el scroll al cambiar de página */}
         <ScrollToTop />
         {/* Header común para todas las páginas */}

@@ -1,0 +1,289 @@
+/* ============================================
+   ESTILOS RESPONSIVE BÁSICOS PARA MÓVIL
+   ============================================ */
+
+/* Ajustes generales para móvil */
+@media (max-width: 768px) {
+  
+  /* Contenedor principal */
+  body {
+    font-size: 14px;
+    overflow-x: hidden;
+  }
+
+  /* Header responsive */
+  .header {
+    padding: 10px 15px !important;
+  }
+
+  .header nav {
+    flex-wrap: wrap;
+    gap: 8px !important;
+  }
+
+  .header nav a,
+  .header nav button {
+    font-size: 12px !important;
+    padding: 6px 10px !important;
+  }
+
+  /* Logo más pequeño */
+  .header .logo {
+    width: 100px !important;
+    height: auto !important;
+  }
+
+  /* Ocultar elementos no críticos en móvil */
+  .header .desktop-only {
+    display: none !important;
+  }
+
+  /* Formularios responsive */
+  .form-container,
+  .profile-form,
+  .event-form,
+  .forum-form {
+    padding: 15px !important;
+    margin: 10px !important;
+  }
+
+  input[type="text"],
+  input[type="email"],
+  input[type="password"],
+  input[type="date"],
+  input[type="time"],
+  textarea,
+  select {
+    font-size: 16px !important; /* Evita zoom en iOS */
+    padding: 10px !important;
+  }
+
+  /* Botones más grandes para táctil */
+  button,
+  .btn {
+    min-height: 44px !important; /* Tamaño mínimo táctil */
+    font-size: 14px !important;
+    padding: 10px 16px !important;
+  }
+
+  /* Cards responsive */
+  .card,
+  .profile-card,
+  .event-card,
+  .forum-card {
+    margin: 10px 5px !important;
+    padding: 12px !important;
+  }
+
+  /* Grids a una columna */
+  .grid,
+  .events-grid,
+  .profiles-grid,
+  .mini-profiles-grid {
+    grid-template-columns: 1fr !important;
+    gap: 10px !important;
+  }
+
+  /* Match Page responsive */
+  .match-page-container {
+    flex-direction: column !important;
+    padding: 10px !important;
+  }
+
+  .filters-sidebar {
+    position: static !important;
+    width: 100% !important;
+    margin-bottom: 15px !important;
+    transform: none !important;
+  }
+
+  .match-list-container {
+    width: 100% !important;
+    margin: 0 !important;
+  }
+
+  .match-card {
+    max-width: 100% !important;
+    margin: 0 auto 15px !important;
+  }
+
+  /* Ocultar sidebars en móvil por defecto */
+  .sidebar-left,
+  .sidebar-right {
+    display: none !important;
+  }
+
+  /* Modales a pantalla completa */
+  .modal,
+  .dialog,
+  .overlay {
+    width: 95% !important;
+    max-width: 100% !important;
+    max-height: 90vh !important;
+    margin: 5vh auto !important;
+  }
+
+  /* Chat responsive */
+  .chat-container {
+    width: 100% !important;
+    height: calc(100vh - 60px) !important;
+  }
+
+  .chat-messages {
+    height: calc(100% - 120px) !important;
+  }
+
+  /* Forum responsive */
+  .forum-topic,
+  .forum-reply {
+    padding: 10px !important;
+  }
+
+  /* Events responsive */
+  .event-card {
+    padding: 12px !important;
+  }
+
+  .event-meta {
+    font-size: 12px !important;
+  }
+
+  /* Trueque responsive */
+  .trueque-card {
+    padding: 10px !important;
+  }
+
+  .trueque-image {
+    max-height: 200px !important;
+  }
+
+  /* Tablas responsive - scroll horizontal */
+  table {
+    display: block;
+    overflow-x: auto;
+    white-space: nowrap;
+  }
+
+  /* Imágenes responsive */
+  img {
+    max-width: 100%;
+    height: auto;
+  }
+
+  /* Textos más pequeños */
+  h1 {
+    font-size: 24px !important;
+  }
+
+  h2 {
+    font-size: 20px !important;
+  }
+
+  h3 {
+    font-size: 18px !important;
+  }
+
+  p {
+    font-size: 14px !important;
+  }
+
+  /* Espaciado reducido */
+  .container {
+    padding: 10px !important;
+  }
+
+  /* Footer responsive */
+  footer {
+    padding: 15px 10px !important;
+    font-size: 12px !important;
+  }
+
+  /* Demo banner más pequeño */
+  .demo-banner {
+    font-size: 11px !important;
+    padding: 6px 0 !important;
+  }
+
+  /* Navegación táctil mejorada */
+  a,
+  button {
+    -webkit-tap-highlight-color: rgba(0, 0, 0, 0.1);
+  }
+
+  /* Evitar zoom en inputs */
+  input,
+  select,
+  textarea {
+    font-size: 16px !important;
+  }
+
+  /* Match celebration responsive */
+  .celebration-overlay {
+    padding: 20px !important;
+  }
+
+  .celebration-content {
+    max-width: 90% !important;
+  }
+
+  /* Profile photo responsive */
+  .profile-photo-large {
+    width: 150px !important;
+    height: 150px !important;
+  }
+
+  /* Interests tags responsive */
+  .interests-list {
+    gap: 6px !important;
+  }
+
+  .interest-tag {
+    font-size: 11px !important;
+    padding: 4px 8px !important;
+  }
+}
+
+/* Para pantallas muy pequeñas */
+@media (max-width: 375px) {
+  body {
+    font-size: 13px;
+  }
+
+  h1 {
+    font-size: 20px !important;
+  }
+
+  h2 {
+    font-size: 18px !important;
+  }
+
+  button,
+  .btn {
+    font-size: 13px !important;
+    padding: 8px 12px !important;
+  }
+
+  .mobile-warning-text strong {
+    font-size: 13px !important;
+  }
+
+  .mobile-warning-text p {
+    font-size: 11px !important;
+  }
+}
+
+/* Landscape mode en móvil */
+@media (max-height: 500px) and (orientation: landscape) {
+  .mobile-warning-banner {
+    display: none; /* Ocultar banner en landscape para dar más espacio */
+  }
+
+  .header {
+    padding: 5px 10px !important;
+  }
+
+  .match-card {
+    max-height: 80vh !important;
+    overflow-y: auto;
+  }
+}

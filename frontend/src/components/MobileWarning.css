@@ -1,0 +1,85 @@
+/* Banner de advertencia para móviles */
+.mobile-warning-banner {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  background: linear-gradient(135deg, #FF6B6B 0%, #FFB347 100%);
+  color: white;
+  z-index: 10000;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.2);
+  animation: slideDown 0.3s ease-out;
+}
+
+@keyframes slideDown {
+  from {
+    transform: translateY(-100%);
+  }
+  to {
+    transform: translateY(0);
+  }
+}
+
+.mobile-warning-content {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 12px 16px;
+  max-width: 100%;
+}
+
+.mobile-warning-icon {
+  font-size: 24px;
+  flex-shrink: 0;
+}
+
+.mobile-warning-text {
+  flex: 1;
+  font-size: 13px;
+  line-height: 1.4;
+}
+
+.mobile-warning-text strong {
+  display: block;
+  font-size: 14px;
+  margin-bottom: 4px;
+  font-weight: 600;
+}
+
+.mobile-warning-text p {
+  margin: 0;
+  opacity: 0.95;
+  font-size: 12px;
+}
+
+.mobile-warning-close {
+  background: rgba(255, 255, 255, 0.2);
+  border: none;
+  color: white;
+  font-size: 18px;
+  width: 32px;
+  height: 32px;
+  border-radius: 50%;
+  cursor: pointer;
+  flex-shrink: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: background 0.2s ease;
+}
+
+.mobile-warning-close:hover {
+  background: rgba(255, 255, 255, 0.3);
+}
+
+/* Ajustar el padding del body cuando el banner está visible */
+body.mobile-warning-active {
+  padding-top: 80px;
+}
+
+/* Responsive - solo visible en móvil */
+@media (min-width: 769px) {
+  .mobile-warning-banner {
+    display: none;
+  }
+}
