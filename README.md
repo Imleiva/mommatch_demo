@@ -10,7 +10,7 @@ Una plataforma comunitaria que conecta madres para compartir experiencias, recur
 
 MomMatch es una aplicación web diseñada para ayudar a las madres a conectarse entre sí a través de matches, intercambios, eventos y foros comunitarios.
 
-**Esta es una versión DEMO** configurada específicamente para funcionar con datos mock sin necesidad de backend, base de datos ni servidor PHP. Perfecta para demostraciones, presentaciones y exploración completa de funcionalidades.
+**Esta es una versión DEMO** configurada específicamente para funcionar con datos mock sin necesidad de backend, base de datos ni servidor PHP.
 
 **Demo en vivo**: [https://imleiva.github.io/mommatch_demo/](https://imleiva.github.io/mommatch_demo/)
 
