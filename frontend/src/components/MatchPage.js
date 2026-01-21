@@ -13,6 +13,7 @@ import {
 } from "./MatchPage/profileLogic";
 import MatchListContainer from "./MatchPage/MatchListContainer";
 import "./MatchPage.css";
+import { config } from "../config";
 
 // Este componente representa la página principal de coincidencias (matches) en MomMatch
 // Permite a las usuarias ver perfiles de posibles amigas, filtrar coincidencias,
@@ -20,7 +21,7 @@ import "./MatchPage.css";
 // Implementa la funcionalidad principal de matchmaking de la aplicación.
 
 // URL base del backend para realizar las solicitudes a la API
-const BACKEND_URL = "http://localhost/mommatch/backend";
+const BACKEND_URL = config.useMocks ? null : "http://localhost/mommatch/backend";
 
 // Componente principal MatchPage que muestra perfiles sugeridos para hacer match
 const MatchPage = () => {

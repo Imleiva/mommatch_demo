@@ -23,7 +23,7 @@ function HomePage() {
       {/* Sección izquierda - Imagen */}
       <div className="mommatch-homepage__left-section">
         <img
-          src="/mommatch_demo/Portada1.jpg"
+          src={`${process.env.PUBLIC_URL}/Portada1.jpg`}
           alt="Mamás con bebés"
           className={`mommatch-homepage__main-image ${
             imageLoaded ? "loaded" : ""

@@ -28,7 +28,7 @@ function Header() {
       <div className="mommatch-header__logo-container">
         <Link to="/" className="mommatch-header__logo-link">
           <img
-            src={`${process.env.PUBLIC_URL}/assets/Logo.png`}
+            src={`${process.env.PUBLIC_URL}/Logo.png`}
             alt="Logo"
             className="mommatch-header__logo"
           />
