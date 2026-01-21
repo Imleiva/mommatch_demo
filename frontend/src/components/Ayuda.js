@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import "./Ayuda.css";
+import config from "../config";
 
 // Componente para la sección de ayuda y soporte
 // Incluye un formulario de contacto y preguntas frecuentes para resolver
@@ -57,8 +58,21 @@ const Ayuda = () => {
     setMessage("");
 
     try {
+      // En GitHub Pages, simular el envío sin hacer llamadas al backend
+      if (config.useMocks) {
+        // Simular delay de envío
+        await new Promise((resolve) => setTimeout(resolve, 1000));
+        setSubmitStatus("success");
+        setMessage(
+          "Mensaje simulado correctamente. (Versión demo - datos no persistentes)"
+        );
+        setFormData({ nombre: "", email: "", mensaje: "" });
+        return;
+      }
+
+      // En desarrollo, hacer llamada real al backend
       const response = await fetch(
-        "http://localhost/mommatch/backend/ayuda_api.php",
+        `${config.backendUrl}/ayuda_api.php`,
         {
           method: "POST",
           headers: {
