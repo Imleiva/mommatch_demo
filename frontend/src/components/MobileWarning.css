@@ -61,27 +61,6 @@
   text-overflow: ellipsis;
 }
 
-.mobile-warning-minimize {
-  background: rgba(255, 255, 255, 0.2);
-  border: none;
-  color: white;
-  font-size: 14px;
-  width: 28px;
-  height: 28px;
-  border-radius: 50%;
-  cursor: pointer;
-  flex-shrink: 0;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  transition: background 0.2s ease;
-  margin-right: 4px;
-}
-
-.mobile-warning-minimize:hover {
-  background: rgba(255, 255, 255, 0.3);
-}
-
 .mobile-warning-close {
   background: rgba(255, 255, 255, 0.2);
   border: none;

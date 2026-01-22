@@ -167,3 +167,81 @@
   overflow: hidden;
   text-overflow: ellipsis;
 }
+
+/* Responsive para móviles */
+@media (max-width: 768px) {
+  .mommatch-header {
+    height: auto;
+    min-height: 60px;
+    padding: 10px 12px;
+    flex-wrap: wrap;
+  }
+
+  .mommatch-header__logo {
+    width: 36px;
+    height: 36px;
+    margin-right: 0.3rem;
+  }
+
+  .mommatch-header__app-name {
+    font-size: 18px;
+  }
+
+  .mommatch-header__nav-menu {
+    width: 100%;
+    flex-direction: column;
+    gap: 8px;
+    margin-top: 8px;
+  }
+
+  .mommatch-header__nav-menu > ul {
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 6px;
+    margin-top: 0;
+  }
+
+  .mommatch-header__nav-menu li {
+    margin-right: 8px;
+    margin-bottom: 0;
+  }
+
+  .mommatch-header__nav-menu ul li:last-child {
+    margin-right: 8px;
+  }
+
+  .mommatch-header__nav-link {
+    font-size: 13px;
+    padding: 4px 8px;
+  }
+
+  .mommatch-header__auth-links {
+    justify-content: center;
+    width: 100%;
+    margin-left: 0;
+    gap: 8px;
+    flex-wrap: wrap;
+  }
+
+  .mommatch-header__auth-links > ul {
+    display: flex;
+    justify-content: center;
+    gap: 6px;
+    margin: 0;
+    padding: 0;
+    flex-wrap: wrap;
+  }
+
+  .mommatch-header__welcome-message {
+    font-size: 12px;
+    min-width: auto;
+    margin-right: 6px;
+  }
+
+  .mommatch-header__logout-button,
+  .mommatch-header__login-link,
+  .mommatch-header__register-link {
+    font-size: 13px;
+    padding: 5px 10px;
+  }
+}

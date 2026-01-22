@@ -29,13 +29,7 @@ const MobileWarning = () => {
             <strong>Versión Desktop Recomendada</strong>
             <p>App optimizada para escritorio</p>
           </div>
-          <button
-            className="mobile-warning-minimize"
-            onClick={() => setIsMinimized(true)}
-            aria-label="Minimizar"
-          >
-            ▼
-          </button>
+
           <button
             className="mobile-warning-close"
             onClick={() => setIsDismissed(true)}

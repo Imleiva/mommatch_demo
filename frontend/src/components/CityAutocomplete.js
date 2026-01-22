@@ -2,6 +2,8 @@ import React, { useState, useEffect } from "react";
 import LoadingSpinner from "./LoadingSpinner";
 import classNames from "classnames";
 import "./CityAutocomplete.css";
+import { config } from "../config";
+import citiesData from "../data/cities.json";
 
 // Este componente de autocompletado para búsqueda de ciudades
 // implementa un campo de entrada con búsqueda predictiva que
@@ -23,11 +25,35 @@ const CityAutocomplete = ({ value, onChange }) => {
 
   const debounceTime = 500;
 
-  // Realiza la petición al backend para obtener sugerencias de ciudades
+  // Realiza la petición al backend o filtra datos locales para obtener sugerencias de ciudades
 
   const getCities = async (searchValue) => {
     try {
       setLoading(true);
+      
+      // Modo demo: usar datos locales
+      if (config.useMocks) {
+        const filtered = citiesData.filter(city => 
+          city.name.toLowerCase().includes(searchValue.toLowerCase())
+        );
+        
+        if (filtered.length === 0) {
+          setCities([]);
+          setNoResults(true);
+        } else {
+          // Adaptar el formato para que coincida con el backend
+          const formattedCities = filtered.map(city => ({
+            city: city.name,
+            full_name: city.name
+          }));
+          setCities(formattedCities);
+          setNoResults(false);
+        }
+        setLoading(false);
+        return;
+      }
+      
+      // Modo backend
       const response = await fetch(
         `http://localhost/mommatch/backend/get_cities.php?search=${searchValue.toLowerCase()}`,
         {
