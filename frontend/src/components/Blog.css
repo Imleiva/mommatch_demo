@@ -154,7 +154,7 @@
 @media (max-width: 768px) {
   .blog-container {
     margin: 0 auto;
-    margin-top: 110px;
+    margin-top: 110px !important;
     padding: 1rem;
     border-radius: 0;
     max-width: 95%;
