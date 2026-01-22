@@ -203,52 +203,65 @@
   .mommatch-header {
     height: auto;
     min-height: 60px;
-    padding: 10px 12px;
+    padding: 8px 10px;
     flex-wrap: wrap;
     position: relative;
+    justify-content: space-between;
+  }
+
+  .mommatch-header__logo-container {
+    flex: 0 0 auto;
+    max-width: calc(100% - 110px);
   }
 
   .mommatch-header__logout-button-top {
-    right: 12px;
-    font-size: 12px;
-    padding: 5px 10px;
+    position: static;
+    transform: none;
+    font-size: 11px;
+    padding: 5px 12px;
+    margin-left: auto;
+    white-space: nowrap;
+  }
+
+  .mommatch-header__logout-button-top:hover {
+    transform: scale(1.05);
   }
 
   .mommatch-header__logo {
-    width: 36px;
-    height: 36px;
+    width: 32px;
+    height: 32px;
     margin-right: 0.3rem;
   }
 
   .mommatch-header__app-name {
-    font-size: 18px;
+    font-size: 16px;
   }
 
   .mommatch-header__nav-menu {
     width: 100%;
     flex-direction: column;
-    gap: 8px;
-    margin-top: 8px;
+    gap: 6px;
+    margin-top: 6px;
   }
 
   .mommatch-header__nav-menu > ul {
     justify-content: center;
     flex-wrap: wrap;
-    gap: 6px;
+    gap: 4px;
     margin-top: 0;
   }
 
   .mommatch-header__nav-menu li {
-    margin-right: 8px;
+    margin-right: 6px;
     margin-bottom: 0;
   }
 
   .mommatch-header__nav-menu ul li:last-child {
-    margin-right: 8px;
+    margin-right: 6px;
   }
 
   .mommatch-header__nav-link {
-    font-size: 13px;
+    font-size: 12px;
     padding: 4px 8px;
   }
 
@@ -256,29 +269,29 @@
     justify-content: center;
     width: 100%;
     margin-left: 0;
-    gap: 8px;
+    gap: 6px;
     flex-wrap: wrap;
   }
 
   .mommatch-header__auth-links > ul {
     display: flex;
     justify-content: center;
-    gap: 6px;
+    gap: 4px;
     margin: 0;
     padding: 0;
     flex-wrap: wrap;
   }
 
   .mommatch-header__welcome-message {
-    font-size: 12px;
+    font-size: 11px;
     min-width: auto;
-    margin-right: 6px;
+    margin-right: 4px;
   }
 
   .mommatch-header__logout-button,
   .mommatch-header__login-link,
   .mommatch-header__register-link {
-    font-size: 13px;
+    font-size: 12px;
     padding: 5px 10px;
   }
 }
