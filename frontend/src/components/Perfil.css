@@ -12,13 +12,50 @@
 /* Responsive para móviles */
 @media (max-width: 768px) {
   .perfil-container {
-    margin: 2rem 12px;
-    margin-top: 100px;
+    margin: 0;
+    margin-top: 85px;
     padding: 0;
+    border-radius: 0;
+  }
+
+  .perfil-header {
+    padding: 1.2rem 0.8rem;
   }
 
   .perfil-header h1 {
-    font-size: 1.4rem;
+    font-size: 1.3rem;
+    margin: 1rem 0.5rem;
+  }
+
+  .perfil-header h1::after {
+    width: 40px;
+    height: 2px;
+  }
+
+  .perfil-form-wrapper {
+    padding: 1rem 0.8rem;
+  }
+
+  .profile-section {
+    padding: 1rem 0.8rem;
+  }
+
+  .perfil-form-group label {
+    font-size: 0.85rem;
+  }
+
+  .perfil-form-group input,
+  .perfil-form-group textarea,
+  .perfil-form-group select {
+    font-size: 0.85rem;
+    padding: 0.6rem;
+  }
+
+  .perfil-save-button,
+  .perfil-cancel-button {
+    font-size: 0.9rem;
+    padding: 0.6rem 1rem;
+    height: auto;
   }
 }
 

@@ -995,11 +995,32 @@ body {
 
 @media (max-width: 768px) {
   .match-page {
-    padding-top: 100px;
+    padding-top: 85px;
+    height: auto;
+    min-height: calc(100vh - 85px);
   }
 
   .match-list-container {
-    top: 100px;
+    top: 85px;
+    padding: 0.5rem;
+    height: auto;
+  }
+
+  .match-card {
+    margin: 0.5rem auto;
+    max-width: 100%;
+  }
+
+  .match-tabs-container {
+    position: relative;
+    top: auto;
+    right: auto;
+    width: 100%;
+    margin-top: 1rem;
+  }
+
+  .filters-sidebar {
+    display: none;
   }
 }
 
