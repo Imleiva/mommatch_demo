@@ -142,19 +142,21 @@ function Blog() {
               </div>
               <div className="article-content">
                 <span className="article-category">{article.category}</span>
-                <h2>{article.title}</h2>
-                <p className="article-excerpt">{article.excerpt}</p>
-                <div className="article-footer">
-                  <time className="article-date" dateTime={article.date}>
-                    {new Date(article.date).toLocaleDateString("es-ES", {
-                      day: "numeric",
-                      month: "long",
-                      year: "numeric",
-                    })}
-                  </time>
-                  <Link to={`/blog/${article.id}`} className="read-more">
-                    Leer más
-                  </Link>
+                <div className="article-text-content">
+                  <h2>{article.title}</h2>
+                  <p className="article-excerpt">{article.excerpt}</p>
+                  <div className="article-footer">
+                    <time className="article-date" dateTime={article.date}>
+                      {new Date(article.date).toLocaleDateString("es-ES", {
+                        day: "numeric",
+                        month: "long",
+                        year: "numeric",
+                      })}
+                    </time>
+                    <Link to={`/blog/${article.id}`} className="read-more">
+                      Leer más
+                    </Link>
+                  </div>
                 </div>
               </div>
             </div>
