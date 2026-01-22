@@ -993,6 +993,16 @@ body {
   }
 }
 
+@media (max-width: 768px) {
+  .match-page {
+    padding-top: 100px;
+  }
+
+  .match-list-container {
+    top: 100px;
+  }
+}
+
 /* Animación de loading dots */
 .loading-dots {
   display: flex;

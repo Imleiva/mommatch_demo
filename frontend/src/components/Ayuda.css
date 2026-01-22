@@ -11,6 +11,23 @@
   z-index: 1;
 }
 
+/* Responsive para móviles */
+@media (max-width: 768px) {
+  .mommatch-help-container {
+    margin: 3rem 12px;
+    margin-top: 100px;
+    padding: 1.5rem 1rem;
+  }
+
+  .mommatch-help-header h1 {
+    font-size: 1.4rem;
+  }
+
+  .mommatch-help-intro {
+    font-size: 0.9rem;
+  }
+}
+
 .mommatch-help-header {
   padding: 1.8rem 1.5rem 1.5rem;
   text-align: center;
