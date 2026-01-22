@@ -1,6 +1,8 @@
 import { useState, useEffect } from "react";
 import "./MatchCelebration.css";
 import { formatPhotoUrl, BACKEND_URL } from "./utils";
+import { config } from "../../config";
+import profilePreferencesData from "../../mock-data/profile_preferences.json";
 
 const MatchCelebration = ({ match, currentUser, onClose }) => {
   const [videoError, setVideoError] = useState(false);
@@ -9,6 +11,16 @@ const MatchCelebration = ({ match, currentUser, onClose }) => {
   // Obtener el perfil completo del usuario actual
   useEffect(() => {
     const fetchCurrentUserProfile = async () => {
+      // Modo demo: usar datos mock
+      if (config.useMocks) {
+        const demoProfile = profilePreferencesData.find(p => p.user_id === 1);
+        if (demoProfile) {
+          setCurrentUserProfile(demoProfile);
+        }
+        return;
+      }
+
+      // Modo backend
       if (currentUser?.id) {
         try {
           const response = await fetch(`${BACKEND_URL}/get_profile.php`, {
@@ -72,11 +84,15 @@ const MatchCelebration = ({ match, currentUser, onClose }) => {
                     currentUserProfile?.profile_photo,
                     BACKEND_URL
                   ) ||
-                  `${BACKEND_URL}/public/uploads/profiles/default_profile.jpg`
+                  (config.useMocks 
+                    ? `${process.env.PUBLIC_URL}/uploads/profiles/default_profile.jpg`
+                    : `${BACKEND_URL}/public/uploads/profiles/default_profile.jpg`)
                 }
                 alt={currentUser?.name || "Tu perfil"}
                 onError={(e) => {
-                  e.target.src = `${BACKEND_URL}/public/uploads/profiles/default_profile.jpg`;
+                  e.target.src = config.useMocks 
+                    ? `${process.env.PUBLIC_URL}/uploads/profiles/default_profile.jpg`
+                    : `${BACKEND_URL}/public/uploads/profiles/default_profile.jpg`;
                 }}
               />
             </div>
@@ -89,11 +105,15 @@ const MatchCelebration = ({ match, currentUser, onClose }) => {
               <img
                 src={
                   formatPhotoUrl(match.profile_photo, BACKEND_URL) ||
-                  `${BACKEND_URL}/public/uploads/profiles/default_profile.jpg`
+                  (config.useMocks 
+                    ? `${process.env.PUBLIC_URL}/uploads/profiles/default_profile.jpg`
+                    : `${BACKEND_URL}/public/uploads/profiles/default_profile.jpg`)
                 }
                 alt={match.name}
                 onError={(e) => {
-                  e.target.src = `${BACKEND_URL}/public/uploads/profiles/default_profile.jpg`;
+                  e.target.src = config.useMocks 
+                    ? `${process.env.PUBLIC_URL}/uploads/profiles/default_profile.jpg`
+                    : `${BACKEND_URL}/public/uploads/profiles/default_profile.jpg`;
                 }}
               />
             </div>
