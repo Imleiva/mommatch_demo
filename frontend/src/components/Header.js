@@ -25,22 +25,24 @@ function Header() {
 
   return (
     <header className="mommatch-header">
-      <div className="mommatch-header__logo-container">
-        <Link to="/" className="mommatch-header__logo-link">
-          <img
-            src={`${process.env.PUBLIC_URL}/assets/Logo.png`}
-            alt="Logo"
-            className="mommatch-header__logo"
-          />
-          <h1 className="mommatch-header__app-name">MomMatch</h1>
-        </Link>
-      </div>
+      <div className="mommatch-header__top-row">
+        <div className="mommatch-header__logo-container">
+          <Link to="/" className="mommatch-header__logo-link">
+            <img
+              src={`${process.env.PUBLIC_URL}/assets/Logo.png`}
+              alt="Logo"
+              className="mommatch-header__logo"
+            />
+            <h1 className="mommatch-header__app-name">MomMatch</h1>
+          </Link>
+        </div>
 
-      {user && (
-        <button onClick={logout} className="mommatch-header__logout-button-top">
-          Cerrar sesión
-        </button>
-      )}
+        {user && (
+          <button onClick={logout} className="mommatch-header__logout-button-top">
+            Cerrar sesión
+          </button>
+        )}
+      </div>
 
       <nav className="mommatch-header__nav-menu">
         <ul>

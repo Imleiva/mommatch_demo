@@ -14,6 +14,17 @@
   left: 0;
   z-index: 1000;
   box-shadow: 0 2px 10px rgba(0, 0, 0, 0.219);
+  flex-wrap: wrap;
+}
+
+/* Contenedor de la fila superior (logo + botón logout) */
+.mommatch-header__top-row {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: auto;
+  flex: 1;
+  min-width: 0;
 }
 
 /* Contenedor del logo y nombre de la app */
@@ -21,6 +32,7 @@
   display: flex;
   align-items: center;
   gap: 4px;
+  min-width: 0;
 }
 
 .mommatch-header__logo-link {
@@ -125,20 +137,18 @@
   font-family: "Poppins", sans-serif;
   transition: all 0.3s ease;
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
-  position: absolute;
-  right: 18px;
-  top: 50%;
-  transform: translateY(-50%);
+  white-space: nowrap;
+  flex-shrink: 0;
 }
 
 .mommatch-header__logout-button-top:hover {
   background-color: var(--color-primary-dark);
-  transform: translateY(-50%) scale(1.05);
+  transform: scale(1.05);
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
 }
 
 .mommatch-header__logout-button-top:active {
-  transform: translateY(-50%);
+  transform: scale(1);
   box-shadow: 0 1px 2px rgba(0, 0, 0, 0.2);
 }
 
@@ -204,27 +214,23 @@
     height: auto;
     min-height: 60px;
     padding: 8px 10px;
-    flex-wrap: wrap;
-    position: relative;
-    justify-content: space-between;
+    flex-direction: column;
+    align-items: stretch;
+  }
+
+  .mommatch-header__top-row {
+    width: 100%;
+    margin-bottom: 6px;
   }
 
   .mommatch-header__logo-container {
-    flex: 0 0 auto;
-    max-width: calc(100% - 110px);
+    flex: 1;
+    min-width: 0;
   }
 
   .mommatch-header__logout-button-top {
-    position: static;
-    transform: none;
     font-size: 11px;
-    padding: 5px 12px;
-    margin-left: auto;
-    white-space: nowrap;
-  }
-
-  .mommatch-header__logout-button-top:hover {
-    transform: scale(1.05);
+    padding: 5px 10px;
   }
 
   .mommatch-header__logo {
@@ -241,7 +247,6 @@
     width: 100%;
     flex-direction: column;
     gap: 6px;
-    margin-top: 6px;
   }
 
   .mommatch-header__nav-menu > ul {
