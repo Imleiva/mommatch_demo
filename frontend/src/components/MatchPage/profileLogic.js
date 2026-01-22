@@ -242,7 +242,9 @@ export const removeLikedProfile = async (
   // Modo demo: simular funcionalidad sin backend
   if (config.useMocks) {
     setLikedProfiles((prev) =>
-      (prev || []).filter((profile) => profile.user_id !== profileId)
+      (prev || []).filter((profile) => 
+        profile.user_id !== profileId && profile.id !== profileId
+      )
     );
     
     setMessage({

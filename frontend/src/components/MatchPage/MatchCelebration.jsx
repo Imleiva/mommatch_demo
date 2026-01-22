@@ -10,17 +10,17 @@ const MatchCelebration = ({ match, currentUser, onClose }) => {
 
   // Obtener el perfil completo del usuario actual
   useEffect(() => {
-    const fetchCurrentUserProfile = async () => {
-      // Modo demo: usar datos mock
-      if (config.useMocks) {
-        const demoProfile = profilePreferencesData.find(p => p.user_id === 1);
-        if (demoProfile) {
-          setCurrentUserProfile(demoProfile);
-        }
-        return;
+    // Modo demo: usar datos mock
+    if (config.useMocks) {
+      const demoProfile = profilePreferencesData.find(p => p.user_id === 1);
+      if (demoProfile) {
+        setCurrentUserProfile(demoProfile);
       }
+      return;
+    }
 
-      // Modo backend
+    // Modo backend
+    const fetchCurrentUserProfile = async () => {
       if (currentUser?.id) {
         try {
           const response = await fetch(`${BACKEND_URL}/get_profile.php`, {

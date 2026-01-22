@@ -532,38 +532,42 @@ body {
   position: absolute;
   top: 5px;
   right: 5px;
-  background-color: white;
-  color: white;
-  border: none;
+  background-color: rgba(255, 255, 255, 0.9);
+  color: #e74c3c;
+  border: 1px solid #e74c3c;
   border-radius: 50%;
-  width: 24px;
-  height: 24px;
+  width: 28px;
+  height: 28px;
   display: flex;
   align-items: center;
   justify-content: center;
   cursor: pointer;
-  font-size: 0.8rem;
+  font-size: 1rem;
   transition: all 0.2s ease;
-  opacity: 0;
-  z-index: 5;
+  opacity: 1;
+  z-index: 10;
   padding: 0;
   overflow: hidden;
   line-height: 1;
   box-sizing: content-box;
-  min-width: 24px;
-  min-height: 24px;
+  min-width: 28px;
+  min-height: 28px;
   aspect-ratio: 1;
   text-align: center;
+  pointer-events: auto;
 }
 
 .mini-profile-card:hover .remove-mini-button {
   opacity: 1;
+  background-color: #e74c3c;
+  color: white;
 }
 
 .remove-mini-button:hover {
-  background-color: var(--color-accent);
-  transform: scale(1.2);
-  box-shadow: 0 0 5px rgba(0, 0, 0, 0.3);
+  background-color: #e74c3c;
+  color: white;
+  transform: scale(1.1);
+  box-shadow: 0 2px 8px rgba(231, 76, 60, 0.4);
 }
 
 /* Estilos para los botones de pestañas */

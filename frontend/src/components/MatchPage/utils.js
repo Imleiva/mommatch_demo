@@ -64,6 +64,11 @@ export const formatPhotoUrl = (photoPath, BACKEND_URL) => {
 };
 
 export const fetchRealMatches = async (BACKEND_URL, setMatches, setMessage) => {
+  // En modo demo, no hacer fetch
+  if (config.useMocks) {
+    return;
+  }
+
   try {
     const realMatchesResponse = await fetch(
       `${BACKEND_URL}/get_real_matches.php`,

@@ -2,6 +2,7 @@ import React, { useEffect, useState } from "react";
 import PropTypes from "prop-types";
 import { formatPhotoUrl } from "../MatchPage/utils";
 import { BACKEND_URL } from "../MatchPage/utils";
+import { config } from "../../config";
 
 // Este componente gestiona las pestañas de matches, likes y rechazados.
 // Me dio bastantes problemas evitar duplicados en la lista
@@ -68,7 +69,17 @@ const MatchTabs = ({
 
   // Fuerza la actualización de matches para verificar nuevos mensajes periódicamente, con manejo de errores
   useEffect(() => {
+    // En modo demo, no hacer polling
+    if (config.useMocks) {
+      return;
+    }
+
     const refreshMatchStatus = async () => {
+      // Protección adicional dentro de la función async
+      if (config.useMocks || !BACKEND_URL) {
+        return;
+      }
+      
       try {
         const response = await fetch(`${BACKEND_URL}/get_real_matches.php`, {
           credentials: "include",
@@ -179,20 +190,22 @@ const MatchTabs = ({
                               )
                             );
 
-                            // Notifica al servidor para marcar los mensajes como leídos
-                            fetch(`${BACKEND_URL}/mark_messages_read.php`, {
-                              method: "POST",
-                              credentials: "include",
-                              headers: {
-                                "Content-Type": "application/json",
-                              },
-                              body: JSON.stringify({ matchId: profile.id }),
-                            }).catch((error) => {
-                              console.warn(
-                                "Error al marcar mensajes como leídos:",
-                                error
-                              );
-                            });
+                            // Notifica al servidor para marcar los mensajes como leídos (solo en modo backend)
+                            if (!config.useMocks) {
+                              fetch(`${BACKEND_URL}/mark_messages_read.php`, {
+                                method: "POST",
+                                credentials: "include",
+                                headers: {
+                                  "Content-Type": "application/json",
+                                },
+                                body: JSON.stringify({ matchId: profile.id }),
+                              }).catch((error) => {
+                                console.warn(
+                                  "Error al marcar mensajes como leídos:",
+                                  error
+                                );
+                              });
+                            }
 
                             // Lanza un evento personalizado para otros componentes
                             window.dispatchEvent(
@@ -229,7 +242,7 @@ const MatchTabs = ({
                 <div className="mini-profiles-grid">
                   {likedProfiles.map((profile) => (
                     <div
-                      key={`liked-${profile.id}`}
+                      key={`liked-${profile.id || profile.user_id}`}
                       className="mini-profile-card"
                     >
                       <img
@@ -242,7 +255,7 @@ const MatchTabs = ({
                         className="remove-mini-button"
                         onClick={() =>
                           removeLikedProfile(
-                            profile.id,
+                            profile.id || profile.user_id,
                             setLikedProfiles,
                             setMessage,
                             BACKEND_URL
