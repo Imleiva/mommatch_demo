@@ -995,13 +995,13 @@ body {
 
 @media (max-width: 768px) {
   .match-page {
-    padding-top: 85px;
+    padding-top: 110px;
     height: auto;
-    min-height: calc(100vh - 85px);
+    min-height: calc(100vh - 110px);
   }
 
   .match-list-container {
-    top: 85px;
+    top: 110px;
     padding: 0.5rem;
     height: auto;
   }
