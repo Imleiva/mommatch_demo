@@ -198,7 +198,9 @@
   border-radius: 8px;
   box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
   border-left: 3px solid var(--color-primary);
-  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  transition:
+    transform 0.3s ease,
+    box-shadow 0.3s ease;
 }
 
 .mommatch-help-faq-item:hover {
@@ -276,7 +278,9 @@
   border-radius: 6px;
   font-size: 0.95rem;
   font-family: "Poppins", sans-serif;
-  transition: border-color 0.2s, box-shadow 0.2s;
+  transition:
+    border-color 0.2s,
+    box-shadow 0.2s;
   background-color: #fafafa;
 }
 
@@ -317,7 +321,9 @@
   font-family: "Poppins", sans-serif;
   cursor: pointer;
   width: 100%;
-  transition: background-color 0.2s, transform 0.2s;
+  transition:
+    background-color 0.2s,
+    transform 0.2s;
   box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
 }
 

@@ -141,13 +141,15 @@
 }
 
 .blog-container .article-category {
-  display: inline-block;
+  display: block;
   background-color: #fbd7a9;
   color: var(--color-dark);
   padding: 2px 7px;
+  width: 100%;
   border-radius: 10px;
   font-size: 0.75rem;
   margin-bottom: 6px;
+  text-align: center;
 }
 
 /* Responsive para móviles */

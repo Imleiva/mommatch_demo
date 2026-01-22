@@ -30,21 +30,21 @@ const CityAutocomplete = ({ value, onChange }) => {
   const getCities = async (searchValue) => {
     try {
       setLoading(true);
-      
+
       // Modo demo: usar datos locales
       if (config.useMocks) {
-        const filtered = citiesData.filter(city => 
-          city.name.toLowerCase().includes(searchValue.toLowerCase())
+        const filtered = citiesData.filter((city) =>
+          city.name.toLowerCase().includes(searchValue.toLowerCase()),
         );
-        
+
         if (filtered.length === 0) {
           setCities([]);
           setNoResults(true);
         } else {
           // Adaptar el formato para que coincida con el backend
-          const formattedCities = filtered.map(city => ({
+          const formattedCities = filtered.map((city) => ({
             city: city.name,
-            full_name: city.name
+            full_name: city.name,
           }));
           setCities(formattedCities);
           setNoResults(false);
@@ -52,7 +52,7 @@ const CityAutocomplete = ({ value, onChange }) => {
         setLoading(false);
         return;
       }
-      
+
       // Modo backend
       const response = await fetch(
         `http://localhost/mommatch/backend/get_cities.php?search=${searchValue.toLowerCase()}`,
@@ -61,7 +61,7 @@ const CityAutocomplete = ({ value, onChange }) => {
           headers: {
             "Content-Type": "application/json",
           },
-        }
+        },
       );
       const res = await response.json();
 

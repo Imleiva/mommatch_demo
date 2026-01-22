@@ -174,7 +174,9 @@
   border-radius: 18px;
   font-size: 0.95rem;
   font-weight: 600;
-  transition: background-color 0.3s ease, transform 0.3s ease;
+  transition:
+    background-color 0.3s ease,
+    transform 0.3s ease;
 }
 
 .mommatch-header nav .mommatch-header__login-link:hover,
