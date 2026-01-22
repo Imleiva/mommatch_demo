@@ -269,7 +269,7 @@ const MatchTabs = ({
                 <div className="mini-profiles-grid">
                   {rejectedProfiles.map((profile) => (
                     <div
-                      key={`rejected-${profile.id}`}
+                      key={`rejected-${profile.id || profile.user_id}`}
                       className="mini-profile-card"
                     >
                       <img
@@ -280,7 +280,7 @@ const MatchTabs = ({
                       <p className="mini-profile-name">{profile.name}</p>
                       <button
                         className="reinsert-mini-button"
-                        onClick={() => reinsertProfile(profile.id)}
+                        onClick={() => reinsertProfile(profile.id || profile.user_id)}
                         title="Reinsertar perfil"
                       >
                         ↺
