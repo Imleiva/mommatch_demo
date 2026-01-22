@@ -58,7 +58,7 @@ function Blog() {
           ...article,
           image: getImageUrl(article.image),
           date: article.date || new Date().toISOString().split("T")[0],
-        }))
+        })),
       );
     } catch (err) {
       console.error("Error:", err);

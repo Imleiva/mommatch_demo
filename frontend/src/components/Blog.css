@@ -146,7 +146,7 @@
   color: var(--color-dark);
   padding: 4px 8px;
   width: 100%;
-  border-radius: 0;
+  border-radius: 8px;
   font-size: 0.75rem;
   margin: 0;
   text-align: center;
