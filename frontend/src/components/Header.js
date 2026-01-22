@@ -36,12 +36,6 @@ function Header() {
             <h1 className="mommatch-header__app-name">MomMatch</h1>
           </Link>
         </div>
-
-        {user && (
-          <button onClick={logout} className="mommatch-header__logout-button-top">
-            Cerrar sesión
-          </button>
-        )}
       </div>
 
       <nav className="mommatch-header__nav-menu">
@@ -85,6 +79,9 @@ function Header() {
             <span className="mommatch-header__welcome-message">
               ¡Hola, {user.name}!
             </span>
+            <button onClick={logout} className="mommatch-header__logout-button">
+              Cerrar sesión
+            </button>
           </div>
         ) : (
           <div className="mommatch-header__auth-links">

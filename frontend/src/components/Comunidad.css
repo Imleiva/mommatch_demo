@@ -9,81 +9,84 @@
 /* Responsive para móviles */
 @media (max-width: 768px) {
   .comunidad-container {
-    margin-top: 85px;
-    padding: 0.5rem;
+    margin-top: 75px;
+    padding: 1rem 0.8rem;
   }
 
   .comunidad-intro-wrapper {
     margin: 0.5rem auto;
-    padding: 1rem 0.8rem;
-    border-radius: 8px;
+    padding: 1.2rem 1rem;
+    border-radius: 10px;
   }
 
   .comunidad-intro {
-    padding: 1rem 0.8rem;
+    padding: 1rem;
   }
 
   .comunidad-intro h2 {
-    font-size: 1.3rem;
+    font-size: 1.4rem;
+    margin-bottom: 0.8rem;
   }
 
   .comunidad-intro p {
-    font-size: 0.85rem;
-    line-height: 1.4;
+    font-size: 0.9rem;
+    line-height: 1.5;
   }
 
   .comunidad-features {
-    margin: 1rem 0;
+    margin: 1.2rem 0;
   }
 
   .comunidad-features > p {
-    font-size: 0.9rem;
+    font-size: 0.95rem;
     padding: 0 0.5rem;
+    line-height: 1.5;
   }
 
   .feature-cards {
     flex-direction: column;
     align-items: center;
-    padding: 0;
-    gap: 0.8rem;
+    padding: 0 0.5rem;
+    gap: 1rem;
   }
 
   .feature-card {
     width: 100%;
     min-width: unset;
-    max-width: 100%;
-    padding: 0.5rem;
+    max-width: 450px;
+    padding: 1rem;
   }
 
   .card-image-container {
-    height: 150px;
+    height: 180px;
   }
 
   .card-content {
-    padding: 0.8rem;
+    padding: 1rem;
   }
 
   .card-content h3 {
-    font-size: 1.1rem;
-    margin-bottom: 0.4rem;
+    font-size: 1.2rem;
+    margin-bottom: 0.6rem;
   }
 
   .card-content p {
-    font-size: 0.85rem;
+    font-size: 0.9rem;
     height: auto;
-    min-height: 3rem;
-    line-height: 1.4;
+    min-height: auto;
+    line-height: 1.5;
+    margin-bottom: 0.8rem;
   }
 
   .card-button {
-    font-size: 0.85rem;
-    padding: 0.5rem 1rem;
+    font-size: 0.9rem;
+    padding: 0.6rem 1.2rem;
   }
 
   .comunidad-content,
   .comunidad-events {
     margin-top: 1.5rem;
-    padding: 1rem;
+    padding: 1.2rem;
   }
 }
 

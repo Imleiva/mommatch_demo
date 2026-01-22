@@ -17,12 +17,10 @@
   flex-wrap: nowrap;
 }
 
-/* Contenedor de la fila superior (logo + botón logout) */
+/* Contenedor de la fila superior (solo logo) */
 .mommatch-header__top-row {
   display: flex;
   align-items: center;
-  justify-content: space-between;
-  gap: 20px;
   flex-shrink: 0;
 }
 
@@ -160,6 +158,13 @@
   gap: 12px;
   align-items: center;
   margin-left: 8px;
+}
+
+.mommatch-header__auth-links ul {
+  display: flex;
+  gap: 0;
+  margin: 0;
+  padding: 0;
 }
 
 /* Estilos para los enlaces de login/registro */
