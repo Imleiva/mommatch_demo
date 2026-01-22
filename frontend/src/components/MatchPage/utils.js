@@ -1,6 +1,8 @@
 import { config } from "../../config";
 
-export const BACKEND_URL = config.useMocks ? null : "http://localhost/mommatch/backend";
+export const BACKEND_URL = config.useMocks
+  ? null
+  : "http://localhost/mommatch/backend";
 
 // Problema con URLs de las fotos
 // Tuve que gestionar varios formatos diferentes porque las fotos venían
@@ -74,7 +76,7 @@ export const fetchRealMatches = async (BACKEND_URL, setMatches, setMessage) => {
       `${BACKEND_URL}/get_real_matches.php`,
       {
         credentials: "include",
-      }
+      },
     );
 
     if (realMatchesResponse.ok) {

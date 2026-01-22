@@ -52,8 +52,8 @@ const MatchTabs = ({
         prevMatches.map((match) =>
           match.id === matchId
             ? { ...match, hasNewMessages: false, unreadCount: 0 }
-            : match
-        )
+            : match,
+        ),
       );
     };
 
@@ -79,7 +79,7 @@ const MatchTabs = ({
       if (config.useMocks || !BACKEND_URL) {
         return;
       }
-      
+
       try {
         const response = await fetch(`${BACKEND_URL}/get_real_matches.php`, {
           credentials: "include",
@@ -159,7 +159,7 @@ const MatchTabs = ({
                         <img
                           src={formatPhotoUrl(
                             profile.profile_photo,
-                            BACKEND_URL
+                            BACKEND_URL,
                           )}
                           alt={profile.name}
                           className="match-mini-photo"
@@ -186,8 +186,8 @@ const MatchTabs = ({
                                       hasNewMessages: false,
                                       unreadCount: 0,
                                     }
-                                  : match
-                              )
+                                  : match,
+                              ),
                             );
 
                             // Notifica al servidor para marcar los mensajes como leídos (solo en modo backend)
@@ -202,7 +202,7 @@ const MatchTabs = ({
                               }).catch((error) => {
                                 console.warn(
                                   "Error al marcar mensajes como leídos:",
-                                  error
+                                  error,
                                 );
                               });
                             }
@@ -211,7 +211,7 @@ const MatchTabs = ({
                             window.dispatchEvent(
                               new CustomEvent("messagesMarkedAsRead", {
                                 detail: { matchId: profile.id },
-                              })
+                              }),
                             );
 
                             handleChat(profile.id);
@@ -258,7 +258,7 @@ const MatchTabs = ({
                             profile.id || profile.user_id,
                             setLikedProfiles,
                             setMessage,
-                            BACKEND_URL
+                            BACKEND_URL,
                           )
                         }
                         title="Eliminar perfil de 'Me gusta'"
@@ -293,7 +293,9 @@ const MatchTabs = ({
                       <p className="mini-profile-name">{profile.name}</p>
                       <button
                         className="reinsert-mini-button"
-                        onClick={() => reinsertProfile(profile.id || profile.user_id)}
+                        onClick={() =>
+                          reinsertProfile(profile.id || profile.user_id)
+                        }
                         title="Reinsertar perfil"
                       >
                         ↺

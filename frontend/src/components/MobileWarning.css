@@ -4,7 +4,7 @@
   top: 0;
   left: 0;
   right: 0;
-  background: linear-gradient(135deg, #FF6B6B 0%, #FFB347 100%);
+  background: linear-gradient(135deg, #ff6b6b 0%, #ffb347 100%);
   color: white;
   z-index: 10000;
   box-shadow: 0 2px 10px rgba(0, 0, 0, 0.2);

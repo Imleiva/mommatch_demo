@@ -737,7 +737,9 @@ body {
   font-size: 0.8rem;
   font-weight: 500;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-  animation: fadeIn 0.3s ease, fadeOut 0.3s ease 2.7s forwards;
+  animation:
+    fadeIn 0.3s ease,
+    fadeOut 0.3s ease 2.7s forwards;
 }
 
 .alert-success {

@@ -21,7 +21,7 @@ const MobileWarning = () => {
   if (!isMobile || isDismissed) return null;
 
   return (
-    <div className={`mobile-warning-banner ${isMinimized ? 'minimized' : ''}`}>
+    <div className={`mobile-warning-banner ${isMinimized ? "minimized" : ""}`}>
       {!isMinimized ? (
         <div className="mobile-warning-content">
           <span className="mobile-warning-icon">💻</span>
@@ -29,14 +29,14 @@ const MobileWarning = () => {
             <strong>Versión Desktop Recomendada</strong>
             <p>App optimizada para escritorio</p>
           </div>
-          <button 
+          <button
             className="mobile-warning-minimize"
             onClick={() => setIsMinimized(true)}
             aria-label="Minimizar"
           >
             ▼
           </button>
-          <button 
+          <button
             className="mobile-warning-close"
             onClick={() => setIsDismissed(true)}
             aria-label="Cerrar"
@@ -45,7 +45,10 @@ const MobileWarning = () => {
           </button>
         </div>
       ) : (
-        <div className="mobile-warning-minimized" onClick={() => setIsMinimized(false)}>
+        <div
+          className="mobile-warning-minimized"
+          onClick={() => setIsMinimized(false)}
+        >
           💻 Ver en Desktop • Toca para expandir
         </div>
       )}

@@ -16,20 +16,20 @@ export const handleLike = async (
   fetchRealMatches,
   BACKEND_URL,
   setShowMatchCelebration,
-  setCurrentMatch
+  setCurrentMatch,
 ) => {
   // Modo demo: simular funcionalidad sin backend
   if (config.useMocks) {
     const likedProfile = profiles.find((profile) => profile.user_id === userId);
-    
+
     if (!likedProfile) return;
-    
+
     // Remover el perfil de la lista principal
     setProfiles((prev) => prev.filter((profile) => profile.user_id !== userId));
-    
+
     // 30% de probabilidad de match instantáneo en demo
     const isMatch = Math.random() < 0.3;
-    
+
     if (isMatch) {
       // Es un match mutuo
       setMatches((prev) => [...prev, likedProfile]);
@@ -62,7 +62,7 @@ export const handleLike = async (
       if (data.message && data.message.includes("match")) {
         // En lugar de mostrar un mensaje simple, se muestra la celebración del "MomMatch"
         const matchedProfile = profiles.find(
-          (profile) => profile.id === userId
+          (profile) => profile.id === userId,
         );
 
         if (matchedProfile) {
@@ -109,20 +109,22 @@ export const handleReject = async (
   setProfiles,
   setRejectedProfiles,
   setMessage,
-  BACKEND_URL
+  BACKEND_URL,
 ) => {
   // Modo demo: simular funcionalidad sin backend
   if (config.useMocks) {
-    const rejectedProfile = profiles.find((profile) => profile.user_id === userId);
-    
+    const rejectedProfile = profiles.find(
+      (profile) => profile.user_id === userId,
+    );
+
     if (!rejectedProfile) return;
-    
+
     // Remover el perfil de la lista principal
     setProfiles((prev) => prev.filter((profile) => profile.user_id !== userId));
-    
+
     // Agregar a rechazados
     setRejectedProfiles((prev) => [...prev, rejectedProfile]);
-    
+
     setMessage({
       type: "info",
       text: "Perfil guardado en 'Tal vez luego'",
@@ -166,20 +168,24 @@ export const reinsertProfile = async (
   rejectedProfiles,
   setProfiles,
   setRejectedProfiles,
-  setMessage
+  setMessage,
 ) => {
   // Modo demo: simular funcionalidad sin backend
   if (config.useMocks) {
-    const profileToReinsert = rejectedProfiles.find((profile) => profile.user_id === profileId);
-    
+    const profileToReinsert = rejectedProfiles.find(
+      (profile) => profile.user_id === profileId,
+    );
+
     if (!profileToReinsert) return;
-    
+
     // Remover de rechazados
-    setRejectedProfiles((prev) => prev.filter((profile) => profile.user_id !== profileId));
-    
+    setRejectedProfiles((prev) =>
+      prev.filter((profile) => profile.user_id !== profileId),
+    );
+
     // Agregar de nuevo a la lista principal
     setProfiles((prev) => [...prev, profileToReinsert]);
-    
+
     setMessage({
       type: "success",
       text: "Perfil reinsertado correctamente.",
@@ -207,7 +213,7 @@ export const reinsertProfile = async (
     if (data.success) {
       // Actualiza los estados eliminando el perfil de rechazados y añadiéndolo a candidatos
       const updatedRejectedProfiles = rejectedProfiles.filter(
-        (profile) => profile.id !== profileId
+        (profile) => profile.id !== profileId,
       );
       setRejectedProfiles(updatedRejectedProfiles);
       setProfiles((prevProfiles) => [...prevProfiles, data.profile]);
@@ -237,16 +243,16 @@ export const removeLikedProfile = async (
   profileId,
   setLikedProfiles,
   setMessage,
-  BACKEND_URL
+  BACKEND_URL,
 ) => {
   // Modo demo: simular funcionalidad sin backend
   if (config.useMocks) {
     setLikedProfiles((prev) =>
-      (prev || []).filter((profile) => 
-        profile.user_id !== profileId && profile.id !== profileId
-      )
+      (prev || []).filter(
+        (profile) => profile.user_id !== profileId && profile.id !== profileId,
+      ),
     );
-    
+
     setMessage({
       type: "success",
       text: "Perfil eliminado de 'Conectemos' correctamente",
@@ -273,7 +279,7 @@ export const removeLikedProfile = async (
     const data = await response.json();
     if (data.success) {
       setLikedProfiles((prev) =>
-        (prev || []).filter((profile) => profile.id !== profileId)
+        (prev || []).filter((profile) => profile.id !== profileId),
       );
 
       setMessage({

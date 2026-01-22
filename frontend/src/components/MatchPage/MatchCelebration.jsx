@@ -12,7 +12,7 @@ const MatchCelebration = ({ match, currentUser, onClose }) => {
   useEffect(() => {
     // Modo demo: usar datos mock
     if (config.useMocks) {
-      const demoProfile = profilePreferencesData.find(p => p.user_id === 1);
+      const demoProfile = profilePreferencesData.find((p) => p.user_id === 1);
       if (demoProfile) {
         setCurrentUserProfile(demoProfile);
       }
@@ -82,15 +82,15 @@ const MatchCelebration = ({ match, currentUser, onClose }) => {
                 src={
                   formatPhotoUrl(
                     currentUserProfile?.profile_photo,
-                    BACKEND_URL
+                    BACKEND_URL,
                   ) ||
-                  (config.useMocks 
+                  (config.useMocks
                     ? `${process.env.PUBLIC_URL}/uploads/profiles/default_profile.jpg`
                     : `${BACKEND_URL}/public/uploads/profiles/default_profile.jpg`)
                 }
                 alt={currentUser?.name || "Tu perfil"}
                 onError={(e) => {
-                  e.target.src = config.useMocks 
+                  e.target.src = config.useMocks
                     ? `${process.env.PUBLIC_URL}/uploads/profiles/default_profile.jpg`
                     : `${BACKEND_URL}/public/uploads/profiles/default_profile.jpg`;
                 }}
@@ -105,13 +105,13 @@ const MatchCelebration = ({ match, currentUser, onClose }) => {
               <img
                 src={
                   formatPhotoUrl(match.profile_photo, BACKEND_URL) ||
-                  (config.useMocks 
+                  (config.useMocks
                     ? `${process.env.PUBLIC_URL}/uploads/profiles/default_profile.jpg`
                     : `${BACKEND_URL}/public/uploads/profiles/default_profile.jpg`)
                 }
                 alt={match.name}
                 onError={(e) => {
-                  e.target.src = config.useMocks 
+                  e.target.src = config.useMocks
                     ? `${process.env.PUBLIC_URL}/uploads/profiles/default_profile.jpg`
                     : `${BACKEND_URL}/public/uploads/profiles/default_profile.jpg`;
                 }}
