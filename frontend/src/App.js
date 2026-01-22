@@ -49,10 +49,11 @@ const DemoBanner = () => (
       backgroundColor: "rgba(255, 204, 0, 0.85)",
       color: "#000",
       textAlign: "center",
-      padding: "10px 0",
+      padding: "10px 20px",
       zIndex: 1000,
       fontWeight: "bold",
       backdropFilter: "blur(2px)",
+      fontSize: "14px",
     }}
   >
     Esta es una versión demo. Los datos y funcionalidades son simulados.

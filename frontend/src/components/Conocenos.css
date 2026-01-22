@@ -146,6 +146,44 @@
   padding: 0 20px;
 }
 
+/* Responsive para móviles */
+@media (max-width: 768px) {
+  .conocenos-container {
+    padding: 1rem 16px;
+    margin: 2rem 12px;
+  }
+
+  .conocenos-hero {
+    padding: 1.5rem 1rem;
+    height: auto;
+  }
+
+  .conocenos-title {
+    font-size: 1.4rem;
+  }
+
+  .conocenos-tagline {
+    font-size: 0.9rem;
+  }
+
+  .conocenos-content {
+    padding: 1.5rem 1rem;
+    gap: 1rem;
+  }
+
+  .conocenos-content p {
+    font-size: 0.9rem;
+  }
+
+  .conocenos-list li {
+    font-size: 0.9rem;
+  }
+
+  .conocenos-offer-container {
+    padding: 0 10px;
+  }
+}
+
 /* Nuevo layout con distribución más orgánica */
 .conocenos-cards {
   display: grid;

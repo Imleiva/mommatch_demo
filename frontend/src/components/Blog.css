@@ -150,6 +150,32 @@
   margin-bottom: 6px;
 }
 
+/* Responsive para móviles */
+@media (max-width: 768px) {
+  .blog-container {
+    margin: 3rem 12px;
+    padding: 1.5rem 1rem;
+  }
+
+  .blog-container .blog-title {
+    font-size: 1.4rem;
+  }
+
+  .blog-container .blog-subtitle {
+    font-size: 0.9rem;
+  }
+
+  .blog-container .article-list {
+    grid-template-columns: 1fr;
+    padding: 0.8rem;
+  }
+
+  .blog-container .category-filters button {
+    font-size: 0.85rem;
+    padding: 5px 15px;
+  }
+}
+
 .blog-container .article-footer {
   margin-top: auto;
   display: flex;
