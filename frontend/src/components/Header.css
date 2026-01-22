@@ -112,6 +112,36 @@
   box-shadow: 0 1px 2px rgba(0, 0, 0, 0.2);
 }
 
+/* Botón de cerrar sesión en la parte superior */
+.mommatch-header__logout-button-top {
+  background-color: var(--color-primary);
+  color: white;
+  border: none;
+  border-radius: 16px;
+  cursor: pointer;
+  padding: 6px 12px;
+  font-size: 0.95rem;
+  font-weight: 600;
+  font-family: "Poppins", sans-serif;
+  transition: all 0.3s ease;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+  position: absolute;
+  right: 18px;
+  top: 50%;
+  transform: translateY(-50%);
+}
+
+.mommatch-header__logout-button-top:hover {
+  background-color: var(--color-primary-dark);
+  transform: translateY(-50%) scale(1.05);
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+}
+
+.mommatch-header__logout-button-top:active {
+  transform: translateY(-50%);
+  box-shadow: 0 1px 2px rgba(0, 0, 0, 0.2);
+}
+
 /* Contenedor de enlaces de autenticación */
 .mommatch-header__auth-links {
   display: flex;
@@ -175,6 +205,13 @@
     min-height: 60px;
     padding: 10px 12px;
     flex-wrap: wrap;
+    position: relative;
+  }
+
+  .mommatch-header__logout-button-top {
+    right: 12px;
+    font-size: 12px;
+    padding: 5px 10px;
   }
 
   .mommatch-header__logo {
