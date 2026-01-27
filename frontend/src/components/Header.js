@@ -89,39 +89,41 @@ function Header() {
         </ul>
 
         {user ? (
-          <div className="mommatch-header__auth-links">
-            <ul>
-              <li>
-                <Link
-                  to="/perfil"
-                  className="mommatch-header__nav-link"
-                  onClick={closeMenu}
-                >
-                  Mi Perfil
-                </Link>
-              </li>
-              <li>
-                <Link
-                  to="/matches"
-                  className="mommatch-header__nav-link"
-                  onClick={closeMenu}
-                >
-                  Matches
-                </Link>
-              </li>
-              <li>
-                <Link
-                  to="/comunidad"
-                  className="mommatch-header__nav-link"
-                  onClick={closeMenu}
-                >
-                  Comunidad
-                </Link>
-              </li>
-            </ul>
-            <span className="mommatch-header__welcome-message">
-              ¡Hola, {user.name}!
-            </span>
+          <>
+            <div className="mommatch-header__auth-links">
+              <span className="mommatch-header__welcome-message">
+                ¡Hola, {user.name}!
+              </span>
+              <ul>
+                <li>
+                  <Link
+                    to="/perfil"
+                    className="mommatch-header__nav-link"
+                    onClick={closeMenu}
+                  >
+                    Mi Perfil
+                  </Link>
+                </li>
+                <li>
+                  <Link
+                    to="/matches"
+                    className="mommatch-header__nav-link"
+                    onClick={closeMenu}
+                  >
+                    Matches
+                  </Link>
+                </li>
+                <li>
+                  <Link
+                    to="/comunidad"
+                    className="mommatch-header__nav-link"
+                    onClick={closeMenu}
+                  >
+                    Comunidad
+                  </Link>
+                </li>
+              </ul>
+            </div>
             <button
               onClick={() => {
                 logout();
@@ -131,7 +133,7 @@ function Header() {
             >
               Cerrar sesión
             </button>
-          </div>
+          </>
         ) : (
           <div className="mommatch-header__auth-links">
             <Link
