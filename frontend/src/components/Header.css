@@ -306,6 +306,7 @@
     gap: 8px;
     margin: 0;
     width: 100%;
+    order: 2;
   }
 
   .mommatch-header__nav-menu li {
@@ -327,6 +328,7 @@
     width: 100%;
     margin: 0;
     gap: 8px;
+    order: 1;
   }
 
   .mommatch-header__auth-links > ul {
