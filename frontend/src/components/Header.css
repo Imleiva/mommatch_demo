@@ -340,15 +340,20 @@
   }
 
   .mommatch-header__welcome-message {
-    font-size: 11px;
-    min-width: auto;
-    margin-right: 4px;
+    font-size: 13px;
+    text-align: center;
+    padding: 12px 16px;
+    margin: 0;
+    width: 100%;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.2);
+    order: -1;
   }
 
   .mommatch-header__logout-button,
   .mommatch-header__login-link,
   .mommatch-header__register-link {
-    font-size: 12px;
-    padding: 5px 10px;
+    font-size: 14px;
+    padding: 12px 16px;
+    text-align: center;
   }
 }
