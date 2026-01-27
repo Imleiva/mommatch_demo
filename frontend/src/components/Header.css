@@ -21,7 +21,32 @@
 .mommatch-header__top-row {
   display: flex;
   align-items: center;
+  justify-content: space-between;
   flex-shrink: 0;
+  width: 100%;
+}
+
+/* Botón hamburguesa - oculto en desktop */
+.mommatch-header__hamburger {
+  display: none;
+  flex-direction: column;
+  justify-content: space-between;
+  width: 30px;
+  height: 24px;
+  background: transparent;
+  border: none;
+  cursor: pointer;
+  padding: 0;
+  z-index: 1001;
+}
+
+.mommatch-header__hamburger span {
+  display: block;
+  width: 100%;
+  height: 3px;
+  background-color: var(--color-secondary);
+  border-radius: 2px;
+  transition: all 0.3s ease;
 }
 
 /* Contenedor del logo y nombre de la app */
@@ -256,10 +281,28 @@
     font-size: 16px;
   }
 
+  /* Mostrar botón hamburguesa en mobile */
+  .mommatch-header__hamburger {
+    display: flex;
+  }
+
+  /* Ocultar menú por defecto en mobile */
   .mommatch-header__nav-menu {
+    display: none;
+    position: absolute;
+    top: 70px;
+    left: 0;
     width: 100%;
+    background: linear-gradient(90deg, #1a2f21 0%, #2a5048 100%);
     flex-direction: column;
     gap: 6px;
+    padding: 20px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+  }
+
+  /* Mostrar menú cuando está abierto */
+  .mommatch-header__nav-menu--open {
+    display: flex;
   }
 
   .mommatch-header__nav-menu > ul {
