@@ -51,9 +51,7 @@ function Header() {
           onClick={toggleMenu}
           aria-label="Menú"
         >
-          <span>-</span>
-          <span>-</span>
-          <span>-</span>
+          ☰
         </button>
       </div>
 
