@@ -69,13 +69,14 @@
 .mommatch-header__nav-menu ul {
   display: flex;
   list-style: none;
-  margin-top: 0.3rem;
+  margin: 0;
   padding: 0;
+  align-items: center;
 }
 
 .mommatch-header__nav-menu li {
   margin-right: 22px;
-  margin-bottom: 0.5rem;
+  margin-bottom: 0;
 }
 
 .mommatch-header__nav-menu ul li:last-child {
@@ -163,8 +164,9 @@
 .mommatch-header__auth-links ul {
   display: flex;
   gap: 0;
-  margin: 0.3rem 0 0.5rem 0;
+  margin: 0;
   padding: 0;
+  align-items: center;
 }
 
 /* Estilos para los enlaces de login/registro */
