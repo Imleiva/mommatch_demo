@@ -285,7 +285,14 @@
 
   /* Mostrar botón hamburguesa en mobile */
   .mommatch-header__hamburger {
-    display: flex;
+    display: flex !important;
+    position: relative;
+  }
+
+  .mommatch-header__hamburger span {
+    display: block !important;
+    background-color: #ffffff !important;
+    opacity: 1 !important;
   }
 
   /* Ocultar menú por defecto en mobile */
