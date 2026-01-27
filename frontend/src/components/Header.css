@@ -21,9 +21,7 @@
 .mommatch-header__top-row {
   display: flex;
   align-items: center;
-  justify-content: space-between;
   flex-shrink: 0;
-  width: 100%;
 }
 
 /* Botón hamburguesa - oculto en desktop */
@@ -257,6 +255,7 @@
 
   .mommatch-header__top-row {
     width: 100%;
+    justify-content: space-between;
     margin-bottom: 6px;
     gap: 10px;
   }
