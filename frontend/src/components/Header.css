@@ -163,7 +163,7 @@
 .mommatch-header__auth-links ul {
   display: flex;
   gap: 0;
-  margin: 0;
+  margin: 0.3rem 0 0.5rem 0;
   padding: 0;
 }
 
