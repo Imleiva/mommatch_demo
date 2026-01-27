@@ -28,13 +28,15 @@
 .mommatch-header__hamburger {
   display: none;
   flex-direction: column;
-  justify-content: space-between;
+  justify-content: space-around;
+  align-items: center;
   width: 30px;
   height: 24px;
   background: transparent;
   border: none;
   cursor: pointer;
   padding: 0;
+  margin: 0;
   z-index: 1001;
 }
 
@@ -45,6 +47,7 @@
   background-color: #ffffff;
   border-radius: 2px;
   transition: all 0.3s ease;
+  flex-shrink: 0;
 }
 
 /* Contenedor del logo y nombre de la app */
