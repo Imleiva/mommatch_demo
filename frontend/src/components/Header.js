@@ -45,32 +45,46 @@ function Header() {
             <h1 className="mommatch-header__app-name">MomMatch</h1>
           </Link>
         </div>
-        
-        <button 
-          className="mommatch-header__hamburger" 
+
+        <button
+          className="mommatch-header__hamburger"
           onClick={toggleMenu}
           aria-label="Menú"
         >
-          <span></span>
-          <span></span>
-          <span></span>
+          <span>-</span>
+          <span>-</span>
+          <span>-</span>
         </button>
       </div>
 
-      <nav className={`mommatch-header__nav-menu ${menuOpen ? 'mommatch-header__nav-menu--open' : ''}`}>
+      <nav
+        className={`mommatch-header__nav-menu ${menuOpen ? "mommatch-header__nav-menu--open" : ""}`}
+      >
         <ul>
           <li>
-            <Link to="/conocenos" className="mommatch-header__nav-link" onClick={closeMenu}>
+            <Link
+              to="/conocenos"
+              className="mommatch-header__nav-link"
+              onClick={closeMenu}
+            >
               Conócenos
             </Link>
           </li>
           <li>
-            <Link to="/blog" className="mommatch-header__nav-link" onClick={closeMenu}>
+            <Link
+              to="/blog"
+              className="mommatch-header__nav-link"
+              onClick={closeMenu}
+            >
               Blog
             </Link>
           </li>
           <li>
-            <Link to="/ayuda" className="mommatch-header__nav-link" onClick={closeMenu}>
+            <Link
+              to="/ayuda"
+              className="mommatch-header__nav-link"
+              onClick={closeMenu}
+            >
               Ayuda
             </Link>
           </li>
@@ -80,17 +94,29 @@ function Header() {
           <div className="mommatch-header__auth-links">
             <ul>
               <li>
-                <Link to="/perfil" className="mommatch-header__nav-link" onClick={closeMenu}>
+                <Link
+                  to="/perfil"
+                  className="mommatch-header__nav-link"
+                  onClick={closeMenu}
+                >
                   Mi Perfil
                 </Link>
               </li>
               <li>
-                <Link to="/matches" className="mommatch-header__nav-link" onClick={closeMenu}>
+                <Link
+                  to="/matches"
+                  className="mommatch-header__nav-link"
+                  onClick={closeMenu}
+                >
                   Matches
                 </Link>
               </li>
               <li>
-                <Link to="/comunidad" className="mommatch-header__nav-link" onClick={closeMenu}>
+                <Link
+                  to="/comunidad"
+                  className="mommatch-header__nav-link"
+                  onClick={closeMenu}
+                >
                   Comunidad
                 </Link>
               </li>
@@ -98,16 +124,30 @@ function Header() {
             <span className="mommatch-header__welcome-message">
               ¡Hola, {user.name}!
             </span>
-            <button onClick={() => { logout(); closeMenu(); }} className="mommatch-header__logout-button">
+            <button
+              onClick={() => {
+                logout();
+                closeMenu();
+              }}
+              className="mommatch-header__logout-button"
+            >
               Cerrar sesión
             </button>
           </div>
         ) : (
           <div className="mommatch-header__auth-links">
-            <Link to="/login" className="mommatch-header__login-link" onClick={closeMenu}>
+            <Link
+              to="/login"
+              className="mommatch-header__login-link"
+              onClick={closeMenu}
+            >
               Iniciar sesión
             </Link>
-            <Link to="/register" className="mommatch-header__register-link" onClick={closeMenu}>
+            <Link
+              to="/register"
+              className="mommatch-header__register-link"
+              onClick={closeMenu}
+            >
               Registrarse
             </Link>
           </div>
