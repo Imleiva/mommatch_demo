@@ -347,7 +347,7 @@
   }
 
   .conocenos-hero {
-    padding: 1.5rem 1rem;
+    padding: 1rem;
     height: auto;
     border-radius: 0;
     width: 100%;
@@ -356,8 +356,8 @@
 
   .conocenos-title {
     font-size: 1.5rem;
-    margin-top: 0.5rem;
-    margin-bottom: 0.5rem;
+    margin-top: 0.3rem;
+    margin-bottom: 0.3rem;
   }
 
   .conocenos-title:after {
@@ -368,7 +368,7 @@
 
   .conocenos-tagline {
     font-size: 0.95rem;
-    margin-bottom: 0.5rem;
+    margin-bottom: 0.3rem;
   }
 
   .conocenos-subtitle {
