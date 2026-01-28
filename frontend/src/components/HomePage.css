@@ -123,16 +123,47 @@
   .mommatch-homepage__container {
     flex-direction: column;
     height: auto;
+    min-height: 100vh;
+    overflow-y: auto;
   }
 
   .mommatch-homepage__left-section {
-    height: 40vh;
+    height: 45vh;
+    min-height: 300px;
+    max-height: 500px;
     width: 100%;
+    flex: none;
   }
 
   .mommatch-homepage__right-section {
     width: 100%;
     max-width: none;
-    padding: 1rem;
+    padding: 2.5rem 1.5rem;
+    min-height: 50vh;
+    flex: 1;
+    justify-content: space-evenly;
+  }
+
+  .mommatch-homepage__title {
+    font-size: 2rem;
+    margin-bottom: 1rem;
+  }
+
+  .mommatch-homepage__subtitle {
+    font-size: 1.1rem;
+    margin-bottom: 2rem;
+  }
+
+  .mommatch-homepage__email-btn,
+  .mommatch-homepage__login-btn {
+    height: 3rem;
+    font-size: 1.1rem;
+    margin-bottom: 1.5rem;
+  }
+
+  .mommatch-homepage__login-text {
+    font-size: 0.95rem;
+    margin-bottom: 0.8rem;
+    margin-top: 1rem;
   }
 }
