@@ -150,8 +150,10 @@
   }
 
   .mommatch-homepage__subtitle {
-    font-size: 0.95rem;
+    font-size: 0.9rem;
     margin-bottom: 1.2rem;
+    max-width: 90%;
+    text-wrap: balance;
   }
 
   .mommatch-homepage__email-btn,
