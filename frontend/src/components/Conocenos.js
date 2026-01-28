@@ -141,19 +141,6 @@ const Conocenos = () => {
                 <div className="image-overlay">Conexión en familia</div>
               </div>
 
-              {/* Imagen panorámica inferior */}
-              <div className="image-container">
-                <img
-                  src="/mommatch_demo/images/conocenos/moms-together1.jpg"
-                  alt=""
-                  className="decorative-image-bottom"
-                  aria-hidden="true"
-                />
-                <div className="image-overlay">
-                  La maternidad es mejor cuando la compartimos
-                </div>
-              </div>
-
               {/* Cita inspiradora */}
               <div className="conocenos-quote">
                 Cuando una madre abraza a otra con empatía, el mundo se vuelve
@@ -170,6 +157,24 @@ const Conocenos = () => {
             comprendida, apoyada y acompañada en tu camino como madre. Porque
             juntas somos más fuertes. Porque juntas somos MomMatch.
           </p>
+
+          {/* Imagen panorámica final */}
+          <div className="conocenos-offer-container">
+            <div className="conocenos-cards">
+              <div className="image-container">
+                <img
+                  src="/mommatch_demo/images/conocenos/moms-together1.jpg"
+                  alt=""
+                  className="decorative-image-bottom"
+                  aria-hidden="true"
+                />
+                <div className="image-overlay">
+                  La maternidad es mejor cuando la compartimos
+                </div>
+              </div>
+            </div>
+          </div>
+
           <div className="button-container">
             <button className="button button-primary" onClick={handleJoinClick}>
               Únete ahora
