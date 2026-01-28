@@ -474,7 +474,7 @@
 
   .conocenos-card {
     padding: 1.2rem;
-    min-height: auto;
+    min-height: 0;
     margin: 0;
   }
 
