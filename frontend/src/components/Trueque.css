@@ -267,6 +267,27 @@
     margin-top: 1rem;
     max-width: 100%;
     width: 100%;
+    height: auto;
+    padding: 1.5rem 1rem;
+  }
+
+  .trueque-form.compact {
+    padding: 1rem;
+  }
+
+  .trueque-form.compact .form-group.compact {
+    margin-bottom: 0.8rem;
+  }
+
+  .trueque-form.compact input,
+  .trueque-form.compact textarea {
+    font-size: 0.9rem;
+    padding: 10px;
+  }
+
+  .trueque-form.compact button.compact {
+    padding: 10px;
+    font-size: 1rem;
   }
 
   .trueques-container {
@@ -346,12 +367,13 @@
 .trueque-card-front,
 .trueque-card-back {
   position: absolute;
-  width: 318px;
-  height: 300px;
+  width: 100%;
+  height: 100%;
   backface-visibility: hidden;
   border-radius: var(--border-radius-md);
   box-shadow: var(--box-shadow-sm);
   padding: 0.8rem; /* Reducido el padding */
+  box-sizing: border-box;
 }
 
 .trueque-card-front {
@@ -590,7 +612,9 @@
   font-weight: bold;
   cursor: pointer;
   color: var(--color-text-light);
-  transition: color 0.2s, transform 0.2s;
+  transition:
+    color 0.2s,
+    transform 0.2s;
   border-radius: 50%;
   width: 35px;
   height: 35px;
@@ -626,7 +650,9 @@
   font-family: "Poppins", sans-serif;
   font-size: 0.85rem;
   min-height: 90px;
-  transition: border-color 0.3s, box-shadow 0.3s;
+  transition:
+    border-color 0.3s,
+    box-shadow 0.3s;
   background-color: white;
 }
 
@@ -647,7 +673,10 @@
   font-weight: 550;
   font-size: 0.85rem;
   width: 100%;
-  transition: background-color 0.3s, transform 0.2s, box-shadow 0.3s;
+  transition:
+    background-color 0.3s,
+    transform 0.2s,
+    box-shadow 0.3s;
   box-shadow: var(--box-shadow-sm);
 }
 
@@ -769,7 +798,9 @@
   font-family: "Poppins", sans-serif;
   font-size: 0.8rem;
   margin-left: 5px;
-  transition: border-color 0.3s, box-shadow 0.3s;
+  transition:
+    border-color 0.3s,
+    box-shadow 0.3s;
   cursor: pointer;
 }
 

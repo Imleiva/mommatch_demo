@@ -536,3 +536,100 @@
 .trueque-message-sending .trueque-message-bubble {
   animation: pulse 1.5s infinite;
 }
+
+/* Mobile responsive styles */
+@media (max-width: 768px) {
+  .trueque-messages-container {
+    margin: 0;
+    padding: 70px 0 5rem 0;
+    width: 100vw;
+    max-width: 100vw;
+    box-sizing: border-box;
+  }
+
+  .trueque-messages-header {
+    padding: 0 0.8rem;
+    margin-bottom: 1rem;
+    gap: 10px;
+  }
+
+  .trueque-messages-title {
+    font-size: 1.3rem;
+    margin-left: 0;
+    margin-bottom: 0;
+  }
+
+  .back-to-trueques-button {
+    font-size: 0.85rem;
+    padding: 6px 10px;
+  }
+
+  .trueque-messages-layout {
+    flex-direction: column;
+    height: auto;
+  }
+
+  .trueque-conversations-sidebar {
+    width: 100%;
+    max-width: 100%;
+    border-right: none;
+    border-bottom: 1px solid #e0e0e0;
+    max-height: 300px;
+    overflow-y: auto;
+  }
+
+  .trueque-chat-area {
+    width: 100%;
+    max-width: 100%;
+    height: calc(100vh - 200px);
+  }
+
+  .conversation-item {
+    padding: 0.8rem;
+  }
+
+  .conversation-item-name {
+    font-size: 0.95rem;
+  }
+
+  .conversation-item-last-message {
+    font-size: 0.85rem;
+  }
+
+  .trueque-messages-list {
+    padding: 0.8rem;
+  }
+
+  .trueque-message-bubble {
+    max-width: 85%;
+    padding: 0.7rem;
+    font-size: 0.9rem;
+  }
+
+  .trueque-message-input-container {
+    padding: 0.8rem;
+  }
+
+  .trueque-message-input {
+    font-size: 0.9rem;
+    padding: 0.7rem 0.9rem;
+  }
+
+  .trueque-send-button {
+    padding: 0.7rem 1rem;
+    font-size: 0.9rem;
+  }
+
+  .trueque-context-card {
+    margin: 0.8rem;
+    padding: 0.8rem;
+  }
+
+  .trueque-context-card h4 {
+    font-size: 0.95rem;
+  }
+
+  .trueque-context-card p {
+    font-size: 0.85rem;
+  }
+}

@@ -14,6 +14,76 @@ import "./TruequeMessages.css";
 
 const BACKEND_URL = config.useMocks ? null : "http://localhost/mommatch/backend";
 
+// Datos mock para conversaciones de trueques
+const MOCK_TRUEQUE_CONVERSATIONS = [
+  {
+    id: 1,
+    trueque_id: 1,
+    other_user_id: 2,
+    other_user_name: "Ana García",
+    other_user_photo: null,
+    trueque_title: "Silla de bebé",
+    last_message: "¿Todavía está disponible?",
+    last_message_time: new Date(Date.now() - 3600000).toISOString(),
+    unread_count: 0
+  },
+  {
+    id: 2,
+    trueque_id: 3,
+    other_user_id: 3,
+    other_user_name: "María López",
+    other_user_photo: null,
+    trueque_title: "Ropa de bebé 0-6 meses",
+    last_message: "Perfecto, ¿cuándo podemos quedar?",
+    last_message_time: new Date(Date.now() - 7200000).toISOString(),
+    unread_count: 0
+  }
+];
+
+// Datos mock para mensajes de un chat
+const MOCK_TRUEQUE_MESSAGES = {
+  1: [
+    {
+      id: 1,
+      from_user_id: 2,
+      from_user_name: "Ana García",
+      to_user_id: 1,
+      message: "Hola, vi tu silla de bebé. ¿Todavía está disponible?",
+      sent_at: new Date(Date.now() - 3600000).toISOString(),
+      read_at: new Date(Date.now() - 3500000).toISOString()
+    },
+    {
+      id: 2,
+      from_user_id: 1,
+      from_user_name: "Usuario Demo",
+      to_user_id: 2,
+      message: "¡Hola! Sí, todavía está disponible.",
+      sent_at: new Date(Date.now() - 3400000).toISOString(),
+      read_at: new Date(Date.now() - 3300000).toISOString()
+    }
+  ],
+  2: [
+    {
+      id: 3,
+      from_user_id: 3,
+      from_user_name: "María López",
+      to_user_id: 1,
+      message: "Me interesa la ropa que tienes",
+      sent_at: new Date(Date.now() - 7200000).toISOString(),
+      read_at: new Date(Date.now() - 7100000).toISOString()
+    },
+    {
+      id: 4,
+      from_user_id: 1,
+      from_user_name: "Usuario Demo",
+      to_user_id: 3,
+      message: "Perfecto, ¿cuándo podemos quedar?",
+      sent_at: new Date(Date.now() - 7000000).toISOString(),
+      read_at: null
+    }
+  ]
+};
+
 const TruequeMessages = () => {
   // Estado para las conversaciones y mensajes
   const { user } = useAuth();
@@ -43,6 +113,22 @@ const TruequeMessages = () => {
     try {
       if (!isBackgroundFetch) setLoading(true);
       else setBackgroundLoading(true);
+
+      // Si usamos mocks, usar datos locales
+      if (config.useMocks) {
+        // Simular delay de red
+        await new Promise(resolve => setTimeout(resolve, 300));
+        
+        if (!areArraysEqual(MOCK_TRUEQUE_CONVERSATIONS, lastConversationsData.current)) {
+          setConversations(MOCK_TRUEQUE_CONVERSATIONS);
+          lastConversationsData.current = MOCK_TRUEQUE_CONVERSATIONS;
+        }
+        
+        // Simular carga de trueques mock (podrías agregar más datos aquí si es necesario)
+        setTrueques([]);
+        
+        return;
+      }
 
       // Usar el nuevo endpoint específico para conversaciones de trueques
       const response = await fetch(`${BACKEND_URL}/get_trueque_chats.php`, {
@@ -94,6 +180,16 @@ const TruequeMessages = () => {
 
       try {
         if (!isBackgroundFetch) setLoading(true);
+
+        // Si usamos mocks, usar datos locales
+        if (config.useMocks) {
+          await new Promise(resolve => setTimeout(resolve, 200));
+          
+          const chatMessages = MOCK_TRUEQUE_MESSAGES[selectedChat.id] || [];
+          setMessages(chatMessages);
+          
+          return;
+        }
 
         const response = await fetch(
           `${BACKEND_URL}/get_trueque_messages.php?chat_id=${selectedChat.id}`,
@@ -176,6 +272,33 @@ const TruequeMessages = () => {
   // Modificar la función sendMessageToServer para ser más directa y rápida
   const sendMessageToServer = useCallback(
     async (messageText, otherUserId, truequeId, chatId, tempId) => {
+      // Si usamos mocks, simular envío exitoso
+      if (config.useMocks) {
+        await new Promise(resolve => setTimeout(resolve, 500));
+        
+        // Simular mensaje enviado exitosamente
+        const sentMessage = {
+          id: Date.now(),
+          from_user_id: user?.id || 1,
+          from_user_name: user?.name || "Usuario Demo",
+          to_user_id: otherUserId,
+          message: messageText,
+          sent_at: new Date().toISOString(),
+          read_at: null,
+          _sent: true,
+          _sending: false,
+          _failed: false
+        };
+        
+        setMessages((prevMessages) =>
+          prevMessages.map((msg) =>
+            msg.id === tempId ? sentMessage : msg
+          )
+        );
+        
+        return true;
+      }
+      
       try {
         // Eliminar el timeout y hacer una petición directa
         const response = await fetch(

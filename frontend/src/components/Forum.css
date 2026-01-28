@@ -280,7 +280,10 @@
   border-radius: var(--border-radius);
   padding: 10px;
   box-shadow: var(--box-shadow);
-  transition: transform 0.3s ease, box-shadow 0.3s ease, border-color 0.3s ease;
+  transition:
+    transform 0.3s ease,
+    box-shadow 0.3s ease,
+    border-color 0.3s ease;
   overflow: hidden;
   border-left: 5px solid;
   border-color: var(--color-primary);
@@ -528,9 +531,11 @@
   overflow: hidden;
   opacity: 0;
   transform: translateY(-10px);
-  transition: max-height 0.6s cubic-bezier(0.25, 0.46, 0.45, 0.94),
+  transition:
+    max-height 0.6s cubic-bezier(0.25, 0.46, 0.45, 0.94),
     padding 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94),
-    opacity 0.4s ease-in-out 0.1s, transform 0.4s ease-in-out 0.1s;
+    opacity 0.4s ease-in-out 0.1s,
+    transform 0.4s ease-in-out 0.1s;
 }
 
 .comment-section.active {
@@ -538,8 +543,10 @@
   padding: 15px;
   opacity: 1;
   transform: translateY(0);
-  transition: max-height 0.8s cubic-bezier(0.25, 0.46, 0.45, 0.94),
-    padding 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94), opacity 0.3s ease-in-out,
+  transition:
+    max-height 0.8s cubic-bezier(0.25, 0.46, 0.45, 0.94),
+    padding 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94),
+    opacity 0.3s ease-in-out,
     transform 0.3s ease-in-out;
 }
 
@@ -575,7 +582,9 @@
   border-radius: 0 8px 8px 0;
   font-size: 0.8rem;
   font-family: "Poppins", sans-serif;
-  transition: transform 0.2s ease, box-shadow 0.2s ease;
+  transition:
+    transform 0.2s ease,
+    box-shadow 0.2s ease;
 }
 
 .reply:hover {
@@ -634,7 +643,9 @@
   padding: 4px;
   color: #888;
   border-radius: 50%;
-  transition: background 0.2s, color 0.2s;
+  transition:
+    background 0.2s,
+    color 0.2s;
   display: inline-flex;
   align-items: center;
   justify-content: center;
@@ -1021,10 +1032,8 @@
 
 /* Encabezado del foro */
 .forum-header {
-  background: linear-gradient(
-      rgba(249, 244, 181, 0.052),
-      rgba(252, 229, 211, 0.159)
-    ),
+  background:
+    linear-gradient(rgba(249, 244, 181, 0.052), rgba(252, 229, 211, 0.159)),
     url("/public/images/comunidad/foro/forum.jpg");
   background-size: cover;
   background-position: center;

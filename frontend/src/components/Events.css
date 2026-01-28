@@ -83,7 +83,9 @@
   line-height: 1;
   cursor: pointer;
   color: var(--color-text);
-  transition: color 0.3s, transform 0.3s;
+  transition:
+    color 0.3s,
+    transform 0.3s;
   padding: 3px;
   z-index: 101;
   width: 30px;
@@ -297,7 +299,9 @@
   border-radius: 8px;
   font-size: 0.7rem;
   font-family: "Poppins", sans-serif;
-  transition: border-color 0.3s, box-shadow 0.3s;
+  transition:
+    border-color 0.3s,
+    box-shadow 0.3s;
   background-color: var(--color-light);
 }
 
@@ -422,7 +426,9 @@
   border-radius: var(--border-radius-md);
   box-shadow: var(--box-shadow);
   overflow: hidden;
-  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  transition:
+    transform 0.3s ease,
+    box-shadow 0.3s ease;
   display: flex;
   flex-direction: column;
   justify-content: space-between;
@@ -816,7 +822,9 @@ input[type="time"]::-webkit-calendar-picker-indicator {
   background-color: white;
   border: 1px solid #ccc;
   font-size: 0.8rem;
-  transition: border-color 0.3s, box-shadow 0.3s;
+  transition:
+    border-color 0.3s,
+    box-shadow 0.3s;
   padding: 4px 8px;
   width: 100%;
 }
@@ -869,13 +877,34 @@ input[type="time"]::-webkit-calendar-picker-indicator {
     max-width: 95vw !important;
     height: auto;
     max-height: 90vh;
-    padding: 1rem;
+    padding: 0.5rem;
+  }
+
+  .event-form-modal::before {
+    background-color: rgba(255, 223, 168, 0.3);
   }
 
   .event-form-container {
     max-width: 100%;
+    padding: 0.8rem;
+    max-height: 85vh;
+  }
+
+  .event-form {
     padding: 1rem;
-    max-height: 80vh;
+    max-height: calc(85vh - 40px);
+  }
+
+  .event-form h3 {
+    font-size: 1.1rem;
+    margin-bottom: 0.8rem;
+  }
+
+  .close-modal-button {
+    top: 10px;
+    right: 10px;
+    width: 32px;
+    height: 32px;
   }
 
   .events-grid {
