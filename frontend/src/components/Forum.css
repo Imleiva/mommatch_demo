@@ -1143,6 +1143,25 @@
     margin-bottom: 1rem;
   }
 
+  .forum-header {
+    padding: 2.5rem 1rem;
+    border-radius: 0;
+    margin-left: -0.8rem;
+    margin-right: -0.8rem;
+    margin-bottom: 1rem;
+    background-position: center 30%;
+    background-size: cover;
+    min-height: 180px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .forum-header h1 {
+    font-size: 1.6rem;
+    margin: 0;
+  }
+
   .topic-card {
     padding: 1rem;
   }
