@@ -265,29 +265,38 @@
 
   .trueque-form-container {
     margin-top: 1rem;
-    max-width: 100%;
     width: 100%;
+    max-width: 100%;
     height: auto;
-    padding: 1.5rem 1rem;
+    padding: 1rem;
+    box-sizing: border-box;
   }
 
   .trueque-form.compact {
+    width: 100%;
     padding: 1rem;
+    box-sizing: border-box;
   }
 
   .trueque-form.compact .form-group.compact {
+    width: 100%;
     margin-bottom: 0.8rem;
+    box-sizing: border-box;
   }
 
   .trueque-form.compact input,
   .trueque-form.compact textarea {
+    width: 100%;
     font-size: 0.9rem;
     padding: 10px;
+    box-sizing: border-box;
   }
 
   .trueque-form.compact button.compact {
+    width: 100%;
     padding: 10px;
     font-size: 1rem;
+    box-sizing: border-box;
   }
 
   .trueques-container {

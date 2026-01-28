@@ -873,38 +873,52 @@ input[type="time"]::-webkit-calendar-picker-indicator {
   }
 
   .event-form-modal {
-    width: 95vw !important;
-    max-width: 95vw !important;
-    height: auto;
-    max-height: 90vh;
-    padding: 0.5rem;
+    width: 100vw !important;
+    max-width: 100vw !important;
+    height: 100vh !important;
+    max-height: 100vh !important;
+    padding: 0 !important;
+    margin: 0 !important;
+    border-radius: 0 !important;
+    top: 0 !important;
+    left: 0 !important;
+    transform: none !important;
+    box-sizing: border-box;
   }
 
   .event-form-modal::before {
-    background-color: rgba(255, 223, 168, 0.3);
+    background-color: rgba(255, 223, 168, 0.4);
   }
 
   .event-form-container {
+    width: 100%;
     max-width: 100%;
-    padding: 0.8rem;
-    max-height: 85vh;
+    padding: 1rem;
+    max-height: calc(100vh - 60px);
+    overflow-y: auto;
+    box-sizing: border-box;
+    margin: 0;
   }
 
   .event-form {
+    width: 100%;
     padding: 1rem;
-    max-height: calc(85vh - 40px);
+    max-height: none;
+    box-sizing: border-box;
   }
 
   .event-form h3 {
-    font-size: 1.1rem;
-    margin-bottom: 0.8rem;
+    font-size: 1.2rem;
+    margin-bottom: 1rem;
   }
 
   .close-modal-button {
+    position: fixed;
     top: 10px;
     right: 10px;
-    width: 32px;
-    height: 32px;
+    width: 36px;
+    height: 36px;
+    z-index: 1001;
   }
 
   .events-grid {
@@ -918,18 +932,44 @@ input[type="time"]::-webkit-calendar-picker-indicator {
   }
 
   .form-grid {
-    display: flex;
-    flex-direction: column;
-    gap: 5px;
+    display: flex !important;
+    flex-direction: column !important;
+    gap: 0.8rem;
+    width: 100%;
+    max-width: 100%;
+    box-sizing: border-box;
   }
 
   .form-group {
-    margin-bottom: 5px;
+    width: 100% !important;
+    grid-column: auto !important;
+    grid-row: auto !important;
+    margin-bottom: 0.8rem;
+    box-sizing: border-box;
+  }
+
+  .form-group input,
+  .form-group textarea,
+  .form-group select {
+    width: 100% !important;
+    box-sizing: border-box;
+    font-size: 0.9rem;
   }
 
   .description-textarea {
-    min-height: 70px;
-    max-height: 70px;
+    min-height: 80px !important;
+    max-height: 120px !important;
+  }
+
+  .no-limit-checkbox-container {
+    margin-left: 0;
+    margin-top: 0.5rem;
+  }
+
+  .city-autocomplete-container,
+  .city-autocomplete-container input {
+    width: 100% !important;
+    box-sizing: border-box;
   }
 }
 

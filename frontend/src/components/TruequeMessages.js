@@ -12,7 +12,9 @@ import "./TruequeMessages.css";
 // El manejo de mensajes optimistas (que se muestran antes de confirmarse en el servidor)
 // mejora mucho la experiencia de usuario al mostrar inmediatamente los mensajes enviados
 
-const BACKEND_URL = config.useMocks ? null : "http://localhost/mommatch/backend";
+const BACKEND_URL = config.useMocks
+  ? null
+  : "http://localhost/mommatch/backend";
 
 // Datos mock para conversaciones de trueques
 const MOCK_TRUEQUE_CONVERSATIONS = [
@@ -25,7 +27,7 @@ const MOCK_TRUEQUE_CONVERSATIONS = [
     trueque_title: "Silla de bebé",
     last_message: "¿Todavía está disponible?",
     last_message_time: new Date(Date.now() - 3600000).toISOString(),
-    unread_count: 0
+    unread_count: 0,
   },
   {
     id: 2,
@@ -36,8 +38,8 @@ const MOCK_TRUEQUE_CONVERSATIONS = [
     trueque_title: "Ropa de bebé 0-6 meses",
     last_message: "Perfecto, ¿cuándo podemos quedar?",
     last_message_time: new Date(Date.now() - 7200000).toISOString(),
-    unread_count: 0
-  }
+    unread_count: 0,
+  },
 ];
 
 // Datos mock para mensajes de un chat
@@ -50,7 +52,7 @@ const MOCK_TRUEQUE_MESSAGES = {
       to_user_id: 1,
       message: "Hola, vi tu silla de bebé. ¿Todavía está disponible?",
       sent_at: new Date(Date.now() - 3600000).toISOString(),
-      read_at: new Date(Date.now() - 3500000).toISOString()
+      read_at: new Date(Date.now() - 3500000).toISOString(),
     },
     {
       id: 2,
@@ -59,8 +61,8 @@ const MOCK_TRUEQUE_MESSAGES = {
       to_user_id: 2,
       message: "¡Hola! Sí, todavía está disponible.",
       sent_at: new Date(Date.now() - 3400000).toISOString(),
-      read_at: new Date(Date.now() - 3300000).toISOString()
-    }
+      read_at: new Date(Date.now() - 3300000).toISOString(),
+    },
   ],
   2: [
     {
@@ -70,7 +72,7 @@ const MOCK_TRUEQUE_MESSAGES = {
       to_user_id: 1,
       message: "Me interesa la ropa que tienes",
       sent_at: new Date(Date.now() - 7200000).toISOString(),
-      read_at: new Date(Date.now() - 7100000).toISOString()
+      read_at: new Date(Date.now() - 7100000).toISOString(),
     },
     {
       id: 4,
@@ -79,9 +81,9 @@ const MOCK_TRUEQUE_MESSAGES = {
       to_user_id: 3,
       message: "Perfecto, ¿cuándo podemos quedar?",
       sent_at: new Date(Date.now() - 7000000).toISOString(),
-      read_at: null
-    }
-  ]
+      read_at: null,
+    },
+  ],
 };
 
 const TruequeMessages = () => {
@@ -117,16 +119,21 @@ const TruequeMessages = () => {
       // Si usamos mocks, usar datos locales
       if (config.useMocks) {
         // Simular delay de red
-        await new Promise(resolve => setTimeout(resolve, 300));
-        
-        if (!areArraysEqual(MOCK_TRUEQUE_CONVERSATIONS, lastConversationsData.current)) {
+        await new Promise((resolve) => setTimeout(resolve, 300));
+
+        if (
+          !areArraysEqual(
+            MOCK_TRUEQUE_CONVERSATIONS,
+            lastConversationsData.current,
+          )
+        ) {
           setConversations(MOCK_TRUEQUE_CONVERSATIONS);
           lastConversationsData.current = MOCK_TRUEQUE_CONVERSATIONS;
         }
-        
+
         // Simular carga de trueques mock (podrías agregar más datos aquí si es necesario)
         setTrueques([]);
-        
+
         return;
       }
 
@@ -183,11 +190,11 @@ const TruequeMessages = () => {
 
         // Si usamos mocks, usar datos locales
         if (config.useMocks) {
-          await new Promise(resolve => setTimeout(resolve, 200));
-          
+          await new Promise((resolve) => setTimeout(resolve, 200));
+
           const chatMessages = MOCK_TRUEQUE_MESSAGES[selectedChat.id] || [];
           setMessages(chatMessages);
-          
+
           return;
         }
 
@@ -195,7 +202,7 @@ const TruequeMessages = () => {
           `${BACKEND_URL}/get_trueque_messages.php?chat_id=${selectedChat.id}`,
           {
             credentials: "include",
-          }
+          },
         );
 
         if (!response.ok) {
@@ -219,13 +226,13 @@ const TruequeMessages = () => {
                     sMsg.temp_id === msg.id || // Si el servidor tiene el ID temporal
                     (sMsg.message === msg.message && // O si hay un mensaje idéntico con timestamp cercano
                       Math.abs(new Date(sMsg.sent_at) - new Date(msg.sent_at)) <
-                        5000)
-                )
+                        5000),
+                ),
             );
 
             // Combinar y ordenar por tiempo
             return [...serverMessages, ...optimisticMessages].sort(
-              (a, b) => new Date(a.sent_at) - new Date(b.sent_at)
+              (a, b) => new Date(a.sent_at) - new Date(b.sent_at),
             );
           });
         }
@@ -238,7 +245,7 @@ const TruequeMessages = () => {
         if (!isBackgroundFetch) setLoading(false);
       }
     },
-    [selectedChat, setLoading, setError]
+    [selectedChat, setLoading, setError],
   );
 
   // Efecto inicial para cargar conversaciones
@@ -274,8 +281,8 @@ const TruequeMessages = () => {
     async (messageText, otherUserId, truequeId, chatId, tempId) => {
       // Si usamos mocks, simular envío exitoso
       if (config.useMocks) {
-        await new Promise(resolve => setTimeout(resolve, 500));
-        
+        await new Promise((resolve) => setTimeout(resolve, 500));
+
         // Simular mensaje enviado exitosamente
         const sentMessage = {
           id: Date.now(),
@@ -287,18 +294,16 @@ const TruequeMessages = () => {
           read_at: null,
           _sent: true,
           _sending: false,
-          _failed: false
+          _failed: false,
         };
-        
+
         setMessages((prevMessages) =>
-          prevMessages.map((msg) =>
-            msg.id === tempId ? sentMessage : msg
-          )
+          prevMessages.map((msg) => (msg.id === tempId ? sentMessage : msg)),
         );
-        
+
         return true;
       }
-      
+
       try {
         // Eliminar el timeout y hacer una petición directa
         const response = await fetch(
@@ -316,7 +321,7 @@ const TruequeMessages = () => {
               chat_id: chatId || null,
               temp_id: tempId,
             }),
-          }
+          },
         );
 
         if (!response.ok) {
@@ -336,8 +341,8 @@ const TruequeMessages = () => {
                     _sending: false,
                     _failed: false,
                   }
-                : msg
-            )
+                : msg,
+            ),
           );
 
           // Forzar una actualización inmediata de las conversaciones
@@ -351,13 +356,15 @@ const TruequeMessages = () => {
         console.error("Error al enviar mensaje:", error);
         setMessages((prevMessages) =>
           prevMessages.map((msg) =>
-            msg.id === tempId ? { ...msg, _failed: true, _sending: false } : msg
-          )
+            msg.id === tempId
+              ? { ...msg, _failed: true, _sending: false }
+              : msg,
+          ),
         );
         throw error;
       }
     },
-    [fetchConversations]
+    [fetchConversations],
   );
 
   // Reemplazo con un enfoque más directo
@@ -418,7 +425,7 @@ const TruequeMessages = () => {
         otherUserId,
         truequeId,
         selectedChat.id,
-        tempId
+        tempId,
       );
     } catch (error) {
       console.error("Error al enviar mensaje:", error);
@@ -465,7 +472,7 @@ const TruequeMessages = () => {
   const findRelatedTrueque = (otherUserId) => {
     return trueques.find(
       (trueque) =>
-        trueque.user_id === otherUserId || trueque.user_id === user.id
+        trueque.user_id === otherUserId || trueque.user_id === user.id,
     );
   };
 
@@ -537,7 +544,7 @@ const TruequeMessages = () => {
                         src={formatPhotoUrl(
                           chat.user1_id === user.id
                             ? chat.user2_photo
-                            : chat.user1_photo
+                            : chat.user1_photo,
                         )}
                         alt={otherUserName}
                         className="trueque-chat-list-avatar"
@@ -588,7 +595,7 @@ const TruequeMessages = () => {
                     src={formatPhotoUrl(
                       selectedChat.user1_id === user.id
                         ? selectedChat.user2_photo
-                        : selectedChat.user1_photo
+                        : selectedChat.user1_photo,
                     )}
                     alt={getOtherUserName(selectedChat)}
                     className="trueque-chat-header-avatar"
@@ -710,7 +717,7 @@ const TruequeMessages = () => {
                                       onClick={() => {
                                         // Eliminar mensaje fallido
                                         setMessages((prev) =>
-                                          prev.filter((m) => m.id !== msg.id)
+                                          prev.filter((m) => m.id !== msg.id),
                                         );
 
                                         // Reintentar enviando un nuevo mensaje
@@ -730,7 +737,7 @@ const TruequeMessages = () => {
                                           otherUserId,
                                           truequeId,
                                           selectedChat.id,
-                                          `retry-${Date.now()}`
+                                          `retry-${Date.now()}`,
                                         );
                                       }}
                                     >
