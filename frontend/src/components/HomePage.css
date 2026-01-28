@@ -28,7 +28,9 @@
   object-position: center;
   display: block;
   opacity: 0;
-  transition: opacity 0.5s ease-in-out, transform 0.5s ease-in-out;
+  transition:
+    opacity 0.5s ease-in-out,
+    transform 0.5s ease-in-out;
 }
 
 .mommatch-homepage__left-section,
@@ -90,7 +92,9 @@
   justify-content: center;
   gap: 0.5rem; /* Reducido de 0.75rem */
   margin-bottom: 1rem; /* Reducido de 2rem */
-  transition: background-color 0.3s ease, color 0.3s ease;
+  transition:
+    background-color 0.3s ease,
+    color 0.3s ease;
 }
 
 .mommatch-homepage__email-btn {
