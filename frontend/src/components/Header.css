@@ -185,6 +185,11 @@
   margin: 0;
   padding: 0;
   align-items: center;
+  order: 1;
+}
+
+.mommatch-header__welcome-message {
+  order: 2;
 }
 
 /* Estilos para los enlaces de login/registro */
@@ -348,6 +353,11 @@
     margin: 0;
     width: 100%;
     border-bottom: 1px solid rgba(255, 255, 255, 0.2);
+    order: 0;
+  }
+
+  .mommatch-header__auth-links > ul {
+    order: 2;
   }
 
   .mommatch-header__logout-button,
