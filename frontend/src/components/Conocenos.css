@@ -432,17 +432,44 @@
   }
 
   .conocenos-cards {
-    display: flex;
-    flex-direction: column;
+    display: flex !important;
+    flex-direction: column !important;
     gap: 1rem;
     padding: 0;
     width: 100%;
+    grid-template-columns: none !important;
   }
 
   .conocenos-card,
   .image-container {
     width: 100%;
     box-sizing: border-box;
+    grid-column: auto !important;
+    grid-row: auto !important;
+  }
+
+  /* Reset all nth-child positioning */
+  .conocenos-card:nth-child(1),
+  .conocenos-card:nth-child(3),
+  .conocenos-card:nth-child(5),
+  .conocenos-card:nth-child(7) {
+    grid-column: auto !important;
+    grid-row: auto !important;
+  }
+
+  .image-container:nth-child(2),
+  .image-container:nth-child(4),
+  .image-container:nth-child(6),
+  .image-container:nth-child(8),
+  .image-container:nth-child(9) {
+    grid-column: auto !important;
+    grid-row: auto !important;
+    padding-bottom: 0 !important;
+  }
+
+  .conocenos-quote {
+    grid-column: auto !important;
+    grid-row: auto !important;
   }
 
   .conocenos-card {
