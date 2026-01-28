@@ -1117,3 +1117,53 @@
   max-width: 500px;
   margin: 0 auto;
 }
+
+/* Mobile responsive styles */
+@media (max-width: 768px) {
+  .forum {
+    margin: 70px 0 0 0;
+    padding: 1rem 0.8rem 5rem 0.8rem;
+    width: 100vw;
+    max-width: 100vw;
+    box-sizing: border-box;
+    border-radius: 0;
+  }
+
+  .forum h1 {
+    font-size: 1.5rem;
+    margin-bottom: 1rem;
+  }
+
+  .topic-card {
+    padding: 1rem;
+  }
+
+  .topic-title {
+    font-size: 1.1rem;
+  }
+
+  .topic-content {
+    font-size: 0.9rem;
+  }
+
+  .new-topic-form {
+    padding: 1rem;
+  }
+
+  .topic-detail-container {
+    width: 100vw;
+    max-width: 100vw;
+    margin: 70px 0 0 0;
+    padding: 1rem 0.8rem 5rem 0.8rem;
+    box-sizing: border-box;
+    border-radius: 0;
+  }
+
+  .replies-section {
+    padding: 1rem;
+  }
+
+  .reply-card {
+    padding: 1rem;
+  }
+}

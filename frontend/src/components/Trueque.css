@@ -248,6 +248,39 @@
 
 /* Adaptación responsive */
 @media (max-width: 768px) {
+  .trueque-container {
+    margin: 70px 0 0 0 !important;
+    padding: 1rem 0.8rem 5rem 0.8rem !important;
+    width: 100vw !important;
+    max-width: 100vw !important;
+    box-sizing: border-box;
+    border-radius: 0;
+  }
+
+  .trueque-container h1 {
+    font-size: 1.5rem;
+    padding-top: 0.5rem;
+    margin-bottom: 1rem;
+  }
+
+  .trueque-form-container {
+    margin-top: 1rem;
+    max-width: 100%;
+    width: 100%;
+  }
+
+  .trueques-container {
+    grid-template-columns: 1fr !important;
+    gap: 1rem;
+  }
+
+  .trueque-item,
+  .trueque-card-front,
+  .trueque-card-back {
+    width: 100%;
+    max-width: 100%;
+  }
+
   .trueque-header-actions {
     flex-direction: column;
     align-items: flex-start;
