@@ -157,7 +157,7 @@
     font-size: 0.9rem;
     margin-bottom: 1.2rem;
     max-width: 90%;
-    text-wrap: balance;
+    /* text-wrap: balance removed for better browser compatibility */
   }
 
   .mommatch-homepage__email-btn,
