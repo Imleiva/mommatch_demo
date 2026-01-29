@@ -1138,31 +1138,41 @@
     border-radius: 0;
   }
 
-  .forum > h1 {
-    font-size: 1.5rem;
-    margin-bottom: 1rem;
-    order: -1;
-    display: block;
-    text-align: center;
-    padding: 0.5rem;
-  }
-
   .forum-header {
-    padding: 1.5rem 1rem;
+    padding: 0;
     border-radius: 0;
     margin-left: -0.8rem;
     margin-right: -0.8rem;
     margin-bottom: 1rem;
-    background-position: center 30%;
-    background-size: cover;
-    min-height: 150px;
+    background: none;
+    box-shadow: none;
     display: flex;
-    align-items: center;
-    justify-content: center;
+    flex-direction: column;
+    min-height: auto;
   }
 
   .forum-header h1 {
-    display: none;
+    font-size: 1.5rem;
+    margin: 0 0 1rem 0;
+    padding: 0.5rem 0.8rem;
+    text-align: center;
+    background: none;
+  }
+
+  .forum-header p {
+    background: linear-gradient(rgba(249, 244, 181, 0.052), rgba(252, 229, 211, 0.159)),
+      url("/public/images/comunidad/foro/forum.jpg");
+    background-size: cover;
+    background-position: center 30%;
+    padding: 2rem 1rem;
+    margin: 0;
+    min-height: 120px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    font-size: 0.95rem;
+    line-height: 1.4;
   }
 
   .topic-card {
