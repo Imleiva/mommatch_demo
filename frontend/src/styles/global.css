@@ -54,7 +54,6 @@ body {
   overflow-x: hidden;
   overflow-y: auto !important;
   height: 100vh;
-  min-width: 1024px; /* ancho mínimo para la página */
 }
 
 html {
