@@ -53,13 +53,22 @@ body {
   line-height: 1.6;
   overflow-x: hidden;
   overflow-y: auto !important;
-  min-height: 100vh;
+  height: 100vh;
+  min-width: 1024px; /* ancho mínimo para la página */
 }
 
 html {
   overflow-y: auto !important;
   height: 100%;
   scroll-behavior: smooth;
+}
+
+/* Mobile override */
+@media (max-width: 768px) {
+  body {
+    min-width: 0 !important;
+    width: 100vw;
+  }
 }
 
 /* estilo scrollbar */
