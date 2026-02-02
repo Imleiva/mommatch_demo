@@ -74,7 +74,9 @@
   box-shadow: 0 5px 15px rgba(255, 111, 97, 0.3);
   overflow: hidden;
   margin-right: 1.5rem;
-  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  transition:
+    transform 0.3s ease,
+    box-shadow 0.3s ease;
 }
 
 .mommatch-profile-view__avatar:hover {
@@ -179,7 +181,9 @@
 
 /* Efecto de hover sutil sin movimiento */
 .mommatch-profile-view__card:hover {
-  box-shadow: 0 6px 18px rgba(0, 0, 0, 0.08), 0 2px 6px rgba(255, 111, 97, 0.15);
+  box-shadow:
+    0 6px 18px rgba(0, 0, 0, 0.08),
+    0 2px 6px rgba(255, 111, 97, 0.15);
   transform: translateY(-2px);
 }
 
@@ -493,20 +497,113 @@
       "presentacion"
       "estado"
       "intereses";
-    padding: 1rem;
+    padding: 1rem 0.2rem 2.5rem 0.2rem;
+    width: 100vw;
+    min-width: 0;
+    box-sizing: border-box;
+    overflow-x: hidden;
+    overflow-y: auto;
+    max-height: unset;
   }
 
   .mommatch-profile-view__header {
     flex-direction: column;
     text-align: center;
+    width: 100vw;
+    box-sizing: border-box;
+    padding: 2.5rem 0.2rem 1.2rem 0.2rem;
+    min-width: 0;
   }
 
   .mommatch-profile-view__avatar {
-    margin-right: 0;
     margin-bottom: 1rem;
+    width: 100px;
+    height: 100px;
+    min-width: 80px;
+    min-height: 80px;
+    max-width: 120px;
+    max-height: 120px;
+    margin-left: auto;
+    margin-right: auto;
+    overflow: hidden;
   }
 
   .mommatch-profile-view__edit-btn {
     margin-top: 1rem;
+  }
+
+  .mommatch-profile-view__title {
+    font-size: 1.2rem;
+    word-break: break-word;
+    padding: 0 0.2rem;
+  }
+
+  .mommatch-profile-view__subtitle {
+    font-size: 0.95rem;
+    margin-left: 0;
+    padding: 0 0.2rem;
+    display: block;
+    word-break: break-word;
+  }
+
+  .mommatch-profile-view__card {
+    min-width: 0;
+    width: 100%;
+    box-sizing: border-box;
+    overflow-x: auto;
+  }
+
+  .mommatch-profile-view__presentation {
+    font-size: 0.92rem;
+    padding: 0.5rem 0.2rem;
+    word-break: break-word;
+  }
+  .mommatch-profile-view__info-card {
+    margin-bottom: 0.7rem;
+    padding-bottom: 0.3rem;
+  }
+  .mommatch-profile-view__presentation {
+    font-size: 0.92rem;
+    padding: 0.7rem 0.7rem;
+    word-break: break-word;
+    margin-bottom: 1rem;
+    border-radius: 10px;
+  }
+  .mommatch-profile-view__estado-card {
+    margin-bottom: 0.7rem;
+    padding-bottom: 0.3rem;
+  }
+  .mommatch-profile-view__info-group {
+    margin-bottom: 0.5rem;
+  }
+  .mommatch-profile-view__intereses-card {
+    margin-bottom: 0.7rem;
+    padding-bottom: 0.3rem;
+  }
+  .mommatch-profile-view__tags {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 6px;
+    justify-content: flex-start;
+    padding: 0.3rem 0.2rem;
+  }
+  .mommatch-profile-view__tag {
+    font-size: 0.85rem;
+    padding: 5px 10px;
+    border-radius: 30px;
+    background: #fffdf4b7;
+    margin: 2px 0;
+  }
+  .mommatch-profile-view__title,
+  .mommatch-profile-view__subtitle,
+  .mommatch-profile-view__presentation,
+  .mommatch-profile-view__info-label,
+  .mommatch-profile-view__info-value,
+  .mommatch-profile-view__subheading,
+  .mommatch-profile-view__section-title {
+    text-align: center;
+  }
+  .mommatch-profile-view__tags {
+    justify-content: center;
   }
 }

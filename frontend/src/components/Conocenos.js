@@ -161,11 +161,12 @@ const Conocenos = () => {
           {/* Imagen panorámica final */}
           <div className="conocenos-offer-container">
             <div className="conocenos-cards">
-              <div className="image-container">
+              <div className="image-container panorama">
                 <img
+                  id="panorama-final-img"
                   src="/mommatch_demo/images/conocenos/moms-together1.jpg"
-                  alt=""
-                  className="decorative-image-bottom"
+                  alt="Panorámica MomMatch"
+                  className="decorative-image-panorama"
                   aria-hidden="true"
                 />
                 <div className="image-overlay">
