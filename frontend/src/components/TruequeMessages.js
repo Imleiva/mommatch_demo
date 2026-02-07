@@ -88,7 +88,16 @@ const MOCK_TRUEQUE_MESSAGES = {
 
 const TruequeMessages = () => {
   // Estado para las conversaciones y mensajes
-  const { user } = useAuth();
+  let { user } = useAuth();
+  // En la demo, si no hay user, usar un usuario demo por defecto
+  if (config.useMocks && !user) {
+    user = {
+      id: 1,
+      name: "Usuario Demo",
+      email: "demo@example.com",
+      photo: "/mommatch_demo/images/profiles/ana.jpg",
+    };
+  }
   const [conversations, setConversations] = useState([]);
   const [selectedChat, setSelectedChat] = useState(null);
   const [messages, setMessages] = useState([]);

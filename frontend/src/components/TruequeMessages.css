@@ -1,3 +1,73 @@
+@media (max-width: 768px) {
+  .trueque-chat-container {
+    flex-direction: column;
+    height: auto;
+    min-height: 70vh;
+    width: 100vw;
+    max-width: 100vw;
+    box-sizing: border-box;
+  }
+  .trueque-chat-sidebar {
+    width: 100%;
+    max-width: 100vw;
+    min-width: 0;
+    border-right: none;
+    border-bottom: 1px solid #e0e0e0;
+    box-sizing: border-box;
+    position: static;
+  }
+  .trueque-conversation-list {
+    height: 180px;
+    max-height: 180px;
+    margin: 0;
+    padding: 0.5rem 0.2rem;
+  }
+  .trueque-chat-content {
+    width: 100vw;
+    max-width: 100vw;
+    min-width: 0;
+    height: calc(100vh - 320px);
+    min-height: 300px;
+    box-sizing: border-box;
+    padding: 0;
+  }
+  .trueque-chat-messages {
+    padding: 0.5rem 0.2rem;
+    height: 45vh;
+    min-height: 180px;
+    max-height: 50vh;
+    font-size: 1rem;
+  }
+  .trueque-message-bubble {
+    max-width: 90vw;
+    font-size: 1rem;
+    padding: 0.7rem 1rem;
+  }
+  .trueque-message-input-container {
+    flex-direction: column;
+    padding: 0.5rem 0.2rem;
+    gap: 0.5rem;
+    margin-left: 0;
+    border-radius: 0 0 12px 12px;
+  }
+  .trueque-message-input {
+    width: 100%;
+    font-size: 1rem;
+    padding: 0.8rem 1rem;
+    border-radius: 20px;
+    margin-bottom: 0.5rem;
+  }
+  #trueque-chat-send-button.custom-trueque-send-btn,
+  .trueque-send-button {
+    width: 100%;
+    max-width: 100%;
+    min-width: 0;
+    font-size: 1.1rem;
+    height: 44px;
+    margin: 0;
+    border-radius: 20px;
+  }
+}
 .trueque-messages-container {
   width: 100%;
   max-width: 1200px;

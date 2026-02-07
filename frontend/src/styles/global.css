@@ -1,3 +1,19 @@
+/* Deshabilitar selección de texto por defecto en desktop */
+@media (min-width: 769px) {
+  body, #root, .App {
+    user-select: none;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+  }
+  /* Permitir selección solo en inputs, textareas y elementos con la clase .allow-select */
+  input, textarea, .allow-select {
+    user-select: text !important;
+    -webkit-user-select: text !important;
+    -moz-user-select: text !important;
+    -ms-user-select: text !important;
+  }
+}
 :root {
   /* Paleta de colores original */
   --color-primary: #ff6f61;
